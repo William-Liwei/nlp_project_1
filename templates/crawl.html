@@ -1,0 +1,146 @@
+<!-- templates/crawl.html -->
+{% extends "base.html" %}
+
+{% block title %}爬取数据 - 多源数据情感分析系统{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h2><i class="fas fa-spider"></i> 爬取评论数据</h2>
+            </div>
+            <div class="card-body">
+                {% if error %}
+                <div class="alert alert-danger">{{ error }}</div>
+                {% endif %}
+                
+                <form method="post" id="crawlForm">
+                    <div class="mb-3">
+                        <label for="platform" class="form-label">选择平台</label>
+                        <select class="form-select" id="platform" name="platform" required>
+                            <option value="" selected disabled>选择数据来源平台</option>
+                            <option value="douban">豆瓣电影</option>
+                            <option value="jd">京东商品</option>
+                            <option value="netease">网易云音乐</option>
+                            <option value="all">所有平台</option>
+                        </select>
+                    </div>
+                    
+                    <div id="singlePlatformForm">
+                        <div class="mb-3">
+                            <label for="ids" class="form-label">ID列表</label>
+                            <input type="text" class="form-control" id="ids" name="ids" placeholder="请输入ID，多个ID用逗号分隔">
+                            <div class="form-text" id="idHelp"></div>
+                        </div>
+                    </div>
+                    
+                    <div id="allPlatformForm" style="display: none;">
+                        <div class="mb-3">
+                            <label for="movie_ids" class="form-label">豆瓣电影ID</label>
+                            <input type="text" class="form-control" id="movie_ids" name="movie_ids" placeholder="请输入豆瓣电影ID，多个ID用逗号分隔">
+                            <div class="form-text">例如：35267208（流浪地球2）</div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="product_ids" class="form-label">京东商品ID</label>
+                            <input type="text" class="form-control" id="product_ids" name="product_ids" placeholder="请输入京东商品ID，多个ID用逗号分隔">
+                            <div class="form-text">例如：100035955048</div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="song_ids" class="form-label">网易云音乐ID</label>
+                            <input type="text" class="form-control" id="song_ids" name="song_ids" placeholder="请输入网易云音乐ID，多个ID用逗号分隔">
+                            <div class="form-text">例如：1359356908</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="pages" class="form-label">爬取页数</label>
+                        <input type="number" class="form-control" id="pages" name="pages" min="1" max="500" value="5">
+                        <div class="form-text">每页约20条评论，建议设置在1-20页之间</div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" id="submitBtn">
+                        <i class="fas fa-download"></i> 开始爬取
+                    </button>
+                </form>
+                
+                <div class="loading" id="loadingIndicator" style="display: none;">
+                    <div class="text-center">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">正在爬取...</span>
+                        </div>
+                        <p class="mt-2">正在爬取数据，请耐心等待...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card mt-4">
+            <div class="card-header">
+                <h4>使用说明</h4>
+            </div>
+            <div class="card-body">
+                <h5>ID获取方法：</h5>
+                <ul>
+                    <li><strong>豆瓣电影：</strong>打开电影页面，URL中的数字部分即为ID（例如：https://movie.douban.com/subject/<strong>35267208</strong>/）</li>
+                    <li><strong>京东商品：</strong>打开商品页面，URL中的数字部分即为ID（例如：https://item.jd.com/<strong>100035955048</strong>.html）</li>
+                    <li><strong>网易云音乐：</strong>打开歌曲页面，URL中的id=后面的数字即为ID（例如：https://music.163.com/#/song?id=<strong>1359356908</strong>）</li>
+                </ul>
+                
+                <div class="alert alert-warning">
+                    <i class="fas fa-exclamation-triangle"></i> 注意：
+                    <ul>
+                        <li>爬取数据时请遵守相关平台的使用规定</li>
+                        <li>爬取过程可能需要几分钟，请耐心等待</li>
+                        <li>爬取页数过多可能导致被平台限制访问</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const platformSelect = document.getElementById('platform');
+        const singlePlatformForm = document.getElementById('singlePlatformForm');
+        const allPlatformForm = document.getElementById('allPlatformForm');
+        const idHelp = document.getElementById('idHelp');
+        const crawlForm = document.getElementById('crawlForm');
+        const loadingIndicator = document.getElementById('loadingIndicator');
+        
+        platformSelect.addEventListener('change', function() {
+            if (this.value === 'all') {
+                singlePlatformForm.style.display = 'none';
+                allPlatformForm.style.display = 'block';
+            } else {
+                singlePlatformForm.style.display = 'block';
+                allPlatformForm.style.display = 'none';
+                
+                // 更新ID帮助文本
+                switch(this.value) {
+                    case 'douban':
+                        idHelp.textContent = '例如：35267208（流浪地球2）';
+                        break;
+                    case 'jd':
+                        idHelp.textContent = '例如：100035955048';
+                        break;
+                    case 'netease':
+                        idHelp.textContent = '例如：1359356908';
+                        break;
+                    default:
+                        idHelp.textContent = '';
+                }
+            }
+        });
+        
+        crawlForm.addEventListener('submit', function() {
+            loadingIndicator.style.display = 'flex';
+        });
+    });
+</script>
+{% endblock %}

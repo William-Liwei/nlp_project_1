@@ -1,0 +1,5771 @@
+{
+  "analysis_types": [
+    "ner",
+    "dependency",
+    "keywords",
+    "summary",
+    "topic",
+    "aspect"
+  ],
+  "ner_stats": {
+    "total_count": 1473,
+    "type_distribution": {
+      "OTHER": 1165,
+      "TIME": 136,
+      "PERSON": 89,
+      "LOCATION": 43,
+      "MUSIC": 29,
+      "MOVIE": 7,
+      "PRODUCT": 2,
+      "BRAND": 2
+    },
+    "top_entities": {
+      "OTHER": [
+        [
+          " ",
+          758
+        ],
+        [
+          "，",
+          225
+        ],
+        [
+          "。",
+          61
+        ],
+        [
+          "！",
+          33
+        ],
+        [
+          "？",
+          16
+        ],
+        [
+          "～",
+          11
+        ],
+        [
+          "ω",
+          5
+        ],
+        [
+          "媛",
+          4
+        ],
+        [
+          "聊天记录",
+          4
+        ],
+        [
+          "普通",
+          3
+        ]
+      ],
+      "TIME": [
+        [
+          "现在",
+          23
+        ],
+        [
+          "今天",
+          12
+        ],
+        [
+          "后来",
+          9
+        ],
+        [
+          "下去",
+          8
+        ],
+        [
+          "最初",
+          6
+        ],
+        [
+          "本来",
+          5
+        ],
+        [
+          "明天",
+          5
+        ],
+        [
+          "夜晚",
+          4
+        ],
+        [
+          "未来",
+          4
+        ],
+        [
+          "冬天",
+          4
+        ]
+      ],
+      "PERSON": [
+        [
+          "宝宝",
+          9
+        ],
+        [
+          "原谅",
+          8
+        ],
+        [
+          "谢谢",
+          5
+        ],
+        [
+          "黑名单",
+          4
+        ],
+        [
+          "明白",
+          4
+        ],
+        [
+          "小狗",
+          4
+        ],
+        [
+          "耶",
+          4
+        ],
+        [
+          "释怀",
+          3
+        ],
+        [
+          "麻木",
+          3
+        ],
+        [
+          "别吵",
+          2
+        ]
+      ],
+      "LOCATION": [
+        [
+          "云",
+          4
+        ],
+        [
+          "太阳",
+          4
+        ],
+        [
+          "青春",
+          3
+        ],
+        [
+          "中考",
+          2
+        ],
+        [
+          "午安",
+          2
+        ],
+        [
+          "爱里",
+          2
+        ],
+        [
+          "东西",
+          2
+        ],
+        [
+          "太累",
+          2
+        ],
+        [
+          "山河",
+          2
+        ],
+        [
+          "四川",
+          1
+        ]
+      ],
+      "MUSIC": [
+        [
+          "，",
+          15
+        ],
+        [
+          " ",
+          9
+        ],
+        [
+          "！",
+          2
+        ],
+        [
+          "～",
+          1
+        ],
+        [
+          "？",
+          1
+        ],
+        [
+          "。",
+          1
+        ]
+      ],
+      "MOVIE": [
+        [
+          " ",
+          6
+        ],
+        [
+          "：",
+          1
+        ]
+      ],
+      "PRODUCT": [
+        [
+          "，",
+          2
+        ]
+      ],
+      "BRAND": [
+        [
+          "，",
+          1
+        ],
+        [
+          "。",
+          1
+        ]
+      ]
+    }
+  },
+  "ner_samples": [
+    [
+      "晚安",
+      "晚安"
+    ],
+    [
+      "陌生人，我想听一句晚安",
+      "陌生人<span style=\"background-color: #CCCCCC;\" title=\"OTHER\">，</span>我想听一句晚安"
+    ],
+    [
+      "这里",
+      "这里"
+    ]
+  ],
+  "dependency_samples": [
+    [
+      "郭梦红，晚安",
+      "\n        <div style=\"font-family: Arial, sans-serif; margin: 20px;\">\n            <h3 style=\"color: #333;\">依存句法分析结果</h3>\n            <div style=\"margin-bottom: 15px;\">\n                <b>原始文本:</b> 郭梦红，晚安\n            </div>\n            <table style=\"width: 100%; border-collapse: collapse; border: 1px solid #ccc;\">\n                <tr style=\"background-color: #f0f0f0;\">\n                    <th style=\"padding: 8px; border: 1px solid #ccc;\">序号</th>\n                    <th style=\"padding: 8px; border: 1px solid #ccc;\">词</th>\n                    <th style=\"padding: 8px; border: 1px solid #ccc;\">词性</th>\n                    <th style=\"padding: 8px; border: 1px solid #ccc;\">依存弧</th>\n                    <th style=\"padding: 8px; border: 1px solid #ccc;\">关系</th>\n                </tr>\n        \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">1</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">郭梦红</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">nr</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">0 (ROOT)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">HED</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">2</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">，</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">x</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">1 (郭梦红)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">3</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">晚安</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">n</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">2 (，)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n            </table>\n        </div>\n        "
+    ],
+    [
+      "最近不顺利她们又欺负我了 我不想内耗了我只想好好睡一觉 为什么最后痛的是真诚对待的人 睡不着的夜我在想你真的爱我吗 我在落差中麻木直到有一天我不再期待幸福出现 原谅我才原来我才可我才可惜我才 最近过得...",
+      "\n        <div style=\"font-family: Arial, sans-serif; margin: 20px;\">\n            <h3 style=\"color: #333;\">依存句法分析结果</h3>\n            <div style=\"margin-bottom: 15px;\">\n                <b>原始文本:</b> 最近不顺利她们又欺负我了 我不想内耗了我只想好好睡一觉 为什么最后痛的是真诚对待的人 睡不着的夜我在想你真的爱我吗 我在落差中麻木直到有一天我不再期待幸福出现 原谅我才原来我才可我才可惜我才 最近过得...\n            </div>\n            <table style=\"width: 100%; border-collapse: collapse; border: 1px solid #ccc;\">\n                <tr style=\"background-color: #f0f0f0;\">\n                    <th style=\"padding: 8px; border: 1px solid #ccc;\">序号</th>\n                    <th style=\"padding: 8px; border: 1px solid #ccc;\">词</th>\n                    <th style=\"padding: 8px; border: 1px solid #ccc;\">词性</th>\n                    <th style=\"padding: 8px; border: 1px solid #ccc;\">依存弧</th>\n                    <th style=\"padding: 8px; border: 1px solid #ccc;\">关系</th>\n                </tr>\n        \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">1</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">最近</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">f</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">0 (ROOT)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">HED</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">2</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">不</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">d</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">1 (最近)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">3</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">顺利</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">ad</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">2 (不)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">4</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">她们</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">r</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">3 (顺利)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">5</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">又</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">d</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">4 (她们)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">6</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">欺负</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">v</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">5 (又)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">HED</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">7</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">我</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">r</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">6 (欺负)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">8</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">了</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">ul</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">7 (我)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">9</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\"> </td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">x</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">8 (了)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">10</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">我</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">r</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">9 ( )</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">11</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">不想</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">v</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">10 (我)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">HED</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">12</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">内耗</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">n</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">11 (不想)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">13</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">了</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">ul</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">12 (内耗)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">14</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">我</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">r</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">13 (了)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">15</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">只</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">d</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">14 (我)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">16</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">想</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">v</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">12 (内耗)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">SBV</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">17</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">好好</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">d</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">16 (想)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">18</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">睡一觉</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">i</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">17 (好好)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">19</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\"> </td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">x</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">18 (睡一觉)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">20</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">为什么</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">r</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">19 ( )</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">21</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">最后</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">f</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">20 (为什么)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">22</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">痛</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">a</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">21 (最后)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">23</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">的</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">uj</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">22 (痛)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">24</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">是</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">v</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">21 (最后)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">ATT</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">25</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">真诚</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">a</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">24 (是)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">26</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">对待</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">v</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">12 (内耗)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">SBV</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">27</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">的</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">uj</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">26 (对待)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">28</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">人</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">n</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">25 (真诚)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">ATT</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">29</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\"> </td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">x</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">28 (人)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">30</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">睡不着</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">v</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">28 (人)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">SBV</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">31</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">的</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">d</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">30 (睡不着)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">32</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">夜</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">r</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">29 ( )</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">ATT</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">33</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">我</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">p</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">32 (夜)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">34</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">在</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">v</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">28 (人)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">SBV</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">35</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">想</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">r</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">34 (在)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">36</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">你</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">d</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">35 (想)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">37</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">真的</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">n</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">36 (你)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">38</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">爱我吗</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">x</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">37 (真的)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">39</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\"> </td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">r</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">38 (爱我吗)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">40</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">我</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">p</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">39 ( )</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">41</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">在</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">a</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">40 (我)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">42</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">落差</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">f</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">41 (在)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">43</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">中</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">nr</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">42 (落差)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">44</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">麻木</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">v</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">43 (中)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">SBV</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">45</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">直到</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">v</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">43 (中)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">SBV</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">46</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">有</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">m</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">45 (直到)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">47</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">一天</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">r</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">46 (有)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">48</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">我</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">d</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">47 (一天)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">49</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">不再</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">v</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">43 (中)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">SBV</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">50</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">期待</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">a</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">49 (不再)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">51</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">幸福</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">v</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">43 (中)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">SBV</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">52</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">出现</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">x</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">51 (幸福)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">53</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\"> </td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">nr</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">52 (出现)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">54</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">原谅</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">r</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">53 ( )</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">55</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">我</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">d</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">54 (原谅)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">56</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">才</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">d</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">55 (我)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">57</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">原来</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">r</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">56 (才)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">58</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">我</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">d</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">57 (原来)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">59</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">才</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">v</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">53 ( )</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">SBV</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">60</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">可</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">r</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">59 (才)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">61</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">我</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">d</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">60 (可)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">62</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">才</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">v</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">53 ( )</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">SBV</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">63</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">可惜</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">r</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">62 (才)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">64</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">我</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">d</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">63 (可惜)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">65</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">才</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">x</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">64 (我)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">66</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\"> </td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">f</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">65 (才)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">67</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">最近</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">ug</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">66 ( )</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">68</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">过得</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">ud</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">67 (最近)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">69</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">...</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">m</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">68 (过得)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n            </table>\n        </div>\n        "
+    ],
+    [
+      "你可以把你脆弱的一面展示给我 我不想听你说没事",
+      "\n        <div style=\"font-family: Arial, sans-serif; margin: 20px;\">\n            <h3 style=\"color: #333;\">依存句法分析结果</h3>\n            <div style=\"margin-bottom: 15px;\">\n                <b>原始文本:</b> 你可以把你脆弱的一面展示给我 我不想听你说没事\n            </div>\n            <table style=\"width: 100%; border-collapse: collapse; border: 1px solid #ccc;\">\n                <tr style=\"background-color: #f0f0f0;\">\n                    <th style=\"padding: 8px; border: 1px solid #ccc;\">序号</th>\n                    <th style=\"padding: 8px; border: 1px solid #ccc;\">词</th>\n                    <th style=\"padding: 8px; border: 1px solid #ccc;\">词性</th>\n                    <th style=\"padding: 8px; border: 1px solid #ccc;\">依存弧</th>\n                    <th style=\"padding: 8px; border: 1px solid #ccc;\">关系</th>\n                </tr>\n        \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">1</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">你</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">r</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">0 (ROOT)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">HED</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">2</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">可以</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">c</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">1 (你)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">3</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">把</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">p</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">2 (可以)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">4</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">你</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">r</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">3 (把)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">5</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">脆弱</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">a</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">4 (你)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">6</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">的</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">uj</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">5 (脆弱)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">7</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">一面</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">m</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">4 (你)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">ATT</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">8</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">展示</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">v</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">7 (一面)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">HED</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">9</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">给</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">p</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">8 (展示)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">10</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">我</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">r</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">9 (给)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">11</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\"> </td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">x</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">10 (我)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">12</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">我</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">r</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">11 ( )</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">13</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">不想</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">v</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">12 (我)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">HED</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">14</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">听</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">v</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">13 (不想)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">HED</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">15</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">你</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">r</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">14 (听)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">DEP</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">16</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">说</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">v</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">15 (你)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">HED</td>\n                </tr>\n            \n                <tr>\n                    <td style=\"padding: 8px; border: 1px solid #ccc; text-align: center;\">17</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">没事</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">v</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">16 (说)</td>\n                    <td style=\"padding: 8px; border: 1px solid #ccc;\">HED</td>\n                </tr>\n            \n            </table>\n        </div>\n        "
+    ]
+  ],
+  "keywords": [
+    [
+      "晚安",
+      1690.4132118391615
+    ],
+    [
+      "加油",
+      103.04105117868899
+    ],
+    [
+      "喜欢",
+      85.81448903763626
+    ],
+    [
+      "大笑",
+      62.09072082740251
+    ],
+    [
+      "颜人",
+      46.62359326130999
+    ],
+    [
+      "开心",
+      36.32560210615642
+    ],
+    [
+      "需要",
+      35.90694685696153
+    ],
+    [
+      "陌生人",
+      35.459006274073566
+    ],
+    [
+      "大哭",
+      35.275327529598584
+    ],
+    [
+      "好听",
+      34.67827614048
+    ],
+    [
+      "首歌",
+      33.52096447085905
+    ],
+    [
+      "流泪",
+      32.08057866232
+    ],
+    [
+      "睡觉",
+      29.8889887827925
+    ],
+    [
+      "没有",
+      28.7132574679436
+    ],
+    [
+      "希望",
+      28.050989594025555
+    ],
+    [
+      "不会",
+      26.106521681554717
+    ],
+    [
+      "可爱",
+      26.029570592356666
+    ],
+    [
+      "爱心",
+      25.779183429162615
+    ],
+    [
+      "打卡",
+      24.582479479
+    ],
+    [
+      "朋友",
+      24.56642281984425
+    ],
+    [
+      "豪庭",
+      23.9095350058
+    ],
+    [
+      "吉言",
+      23.4069061492
+    ],
+    [
+      "生活",
+      23.24654320590117
+    ],
+    [
+      "想起",
+      22.495417918176003
+    ],
+    [
+      "记得",
+      21.912471848391384
+    ],
+    [
+      "恋爱",
+      21.341243184737
+    ],
+    [
+      "有点像",
+      20.838683488933334
+    ],
+    [
+      "知道",
+      20.625453488901716
+    ],
+    [
+      "眼泪",
+      20.043575663223002
+    ],
+    [
+      "时候",
+      19.93044538261491
+    ]
+  ],
+  "keyword_samples": [
+    [
+      "这",
+      []
+    ],
+    [
+      "i likeyou",
+      []
+    ],
+    [
+      "晚安不能对谁都说",
+      [
+        [
+          "晚安",
+          5.6308101612
+        ],
+        [
+          "不能",
+          1.99508241725
+        ]
+      ]
+    ]
+  ],
+  "summary_stats": {
+    "count": 43,
+    "avg_reduction": -522.7646099495767
+  },
+  "summary_samples": [
+    [
+      "其实我很清楚 我很委屈 你也是 我爱每一个陪伴过我的人 记忆中的你太好了难忘也难说 如果相处太累及时告别没有错 我总想等等再等等 聊天记录往上翻回到你爱我的瞬间 黑名单里躺着的都是曾经的VIP 如果梦里有我想要的 那我一定早睡 今年冬天格外的冷 遗憾你比冬天先离开",
+      "其实我很清楚 我很委屈 你也是 我爱每一个陪伴过我的人 记忆中的你太好了难忘也难说 如果相处太累及时告别没有错 我总想等等再等等 聊天记录往上翻回到你爱我的瞬间 黑名单里躺着的都是曾经的VIP 如果梦里有我想要的 那我一定早睡 今年冬天格外的冷 遗憾你比冬天先离开。"
+    ],
+    [
+      "k 这是你当时最喜欢的歌 一听到这首就想起了当时的你 那时候的我们多好啊 现在却变成了最熟悉的陌生人 但是我不后悔 你教会了我很多事情 我长记性了 但是现在的我变了 不想了解其他人 也无法像以前一样热情了",
+      "k 这是你当时最喜欢的歌 一听到这首就想起了当时的你 那时候的我们多好啊 现在却变成了最熟悉的陌生人 但是我不后悔 你教会了我很多事情 我长记性了 但是现在的我变了 不想了解其他人 也无法像以前一样热情了。"
+    ],
+    [
+      "没有突如其来的冷淡 起初就没那么喜欢你 你最懂我了 可最近我们话不多 想到我们曾经也那么好 我也好想哭 每一滴眼泪都是爱要消失的证据 我不在相信承诺 我只要无条件的陪伴 想放弃却又舍不得想继续却没又意义 有些话我听了会高兴 但我永远不相信 我知道没有人会爱我的全部包括我的情绪",
+      "没有突如其来的冷淡 起初就没那么喜欢你 你最懂我了 可最近我们话不多 想到我们曾经也那么好 我也好想哭 每一滴眼泪都是爱要消失的证据 我不在相信承诺 我只要无条件的陪伴 想放弃却又舍不得想继续却没又意义 有些话我听了会高兴 但我永远不相信 我知道没有人会爱我的全部包括我的情绪。"
+    ]
+  ],
+  "topics": [],
+  "topic_samples": {
+    "0": [
+      [
+        "是吗，那我们谈吧",
+        0.0
+      ],
+      [
+        "给时间点时间 让时间说真话。",
+        0.0
+      ],
+      [
+        "我一直在找一个跟你很像的人 最后我才发现我和你最像",
+        0.0
+      ]
+    ],
+    "1": [
+      [
+        "是吗，那我们谈吧",
+        0.0
+      ],
+      [
+        "给时间点时间 让时间说真话。",
+        0.0
+      ],
+      [
+        "我一直在找一个跟你很像的人 最后我才发现我和你最像",
+        0.0
+      ]
+    ],
+    "2": [
+      [
+        "是吗，那我们谈吧",
+        0.0
+      ],
+      [
+        "给时间点时间 让时间说真话。",
+        0.0
+      ],
+      [
+        "我一直在找一个跟你很像的人 最后我才发现我和你最像",
+        0.0
+      ]
+    ],
+    "3": [
+      [
+        "是吗，那我们谈吧",
+        0.0
+      ],
+      [
+        "给时间点时间 让时间说真话。",
+        0.0
+      ],
+      [
+        "我一直在找一个跟你很像的人 最后我才发现我和你最像",
+        0.0
+      ]
+    ],
+    "4": [
+      [
+        "是吗，那我们谈吧",
+        0.0
+      ],
+      [
+        "给时间点时间 让时间说真话。",
+        0.0
+      ],
+      [
+        "我一直在找一个跟你很像的人 最后我才发现我和你最像",
+        0.0
+      ]
+    ]
+  },
+  "aspect_summary": {
+    "晚安": {
+      "正面": 4,
+      "中性": 205,
+      "负面": 0,
+      "总数": 209,
+      "样例": {},
+      "正面比例": 0.019138755980861243,
+      "中性比例": 0.9808612440191388,
+      "负面比例": 0.0
+    },
+    "时候": {
+      "正面": 1,
+      "中性": 25,
+      "负面": 0,
+      "总数": 26,
+      "样例": {},
+      "正面比例": 0.038461538461538464,
+      "中性比例": 0.9615384615384616,
+      "负面比例": 0.0
+    },
+    "朋友": {
+      "正面": 1,
+      "中性": 19,
+      "负面": 0,
+      "总数": 20,
+      "样例": {},
+      "正面比例": 0.05,
+      "中性比例": 0.95,
+      "负面比例": 0.0
+    },
+    "世界": {
+      "正面": 0,
+      "中性": 19,
+      "负面": 0,
+      "总数": 19,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "我会": {
+      "正面": 2,
+      "中性": 17,
+      "负面": 0,
+      "总数": 19,
+      "样例": {},
+      "正面比例": 0.10526315789473684,
+      "中性比例": 0.8947368421052632,
+      "负面比例": 0.0
+    },
+    "感觉": {
+      "正面": 8,
+      "中性": 5,
+      "负面": 0,
+      "总数": 13,
+      "样例": {},
+      "正面比例": 0.6153846153846154,
+      "中性比例": 0.38461538461538464,
+      "负面比例": 0.0
+    },
+    "流泪": {
+      "正面": 1,
+      "中性": 12,
+      "负面": 0,
+      "总数": 13,
+      "样例": {},
+      "正面比例": 0.07692307692307693,
+      "中性比例": 0.9230769230769231,
+      "负面比例": 0.0
+    },
+    "首歌": {
+      "正面": 2,
+      "中性": 8,
+      "负面": 0,
+      "总数": 10,
+      "样例": {},
+      "正面比例": 0.2,
+      "中性比例": 0.8,
+      "负面比例": 0.0
+    },
+    "我爱你": {
+      "正面": 0,
+      "中性": 10,
+      "负面": 0,
+      "总数": 10,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "爱心": {
+      "正面": 0,
+      "中性": 10,
+      "负面": 0,
+      "总数": 10,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "眼泪": {
+      "正面": 0,
+      "中性": 10,
+      "负面": 0,
+      "总数": 10,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "情绪": {
+      "正面": 0,
+      "中性": 10,
+      "负面": 0,
+      "总数": 10,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "陌生人": {
+      "正面": 0,
+      "中性": 10,
+      "负面": 0,
+      "总数": 10,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "时间": {
+      "正面": 0,
+      "中性": 9,
+      "负面": 0,
+      "总数": 9,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "意义": {
+      "正面": 0,
+      "中性": 9,
+      "负面": 0,
+      "总数": 9,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "好不好": {
+      "正面": 0,
+      "中性": 9,
+      "负面": 0,
+      "总数": 9,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "宝宝": {
+      "正面": 1,
+      "中性": 8,
+      "负面": 0,
+      "总数": 9,
+      "样例": {},
+      "正面比例": 0.1111111111111111,
+      "中性比例": 0.8888888888888888,
+      "负面比例": 0.0
+    },
+    "陪伴": {
+      "正面": 0,
+      "中性": 9,
+      "负面": 0,
+      "总数": 9,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "原谅": {
+      "正面": 1,
+      "中性": 7,
+      "负面": 0,
+      "总数": 8,
+      "样例": {},
+      "正面比例": 0.125,
+      "中性比例": 0.875,
+      "负面比例": 0.0
+    },
+    "文案": {
+      "正面": 0,
+      "中性": 8,
+      "负面": 0,
+      "总数": 8,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "颜人": {
+      "正面": 3,
+      "中性": 5,
+      "负面": 0,
+      "总数": 8,
+      "样例": {},
+      "正面比例": 0.375,
+      "中性比例": 0.625,
+      "负面比例": 0.0
+    },
+    "无所谓": {
+      "正面": 0,
+      "中性": 7,
+      "负面": 0,
+      "总数": 7,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "无力": {
+      "正面": 6,
+      "中性": 0,
+      "负面": 0,
+      "总数": 6,
+      "样例": {},
+      "正面比例": 1.0,
+      "中性比例": 0.0,
+      "负面比例": 0.0
+    },
+    "碗饭": {
+      "正面": 0,
+      "中性": 6,
+      "负面": 0,
+      "总数": 6,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "恋人": {
+      "正面": 0,
+      "中性": 6,
+      "负面": 0,
+      "总数": 6,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "关系": {
+      "正面": 0,
+      "中性": 5,
+      "负面": 1,
+      "总数": 6,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 0.8333333333333334,
+      "负面比例": 0.16666666666666666
+    },
+    "你好": {
+      "正面": 0,
+      "中性": 6,
+      "负面": 0,
+      "总数": 6,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "网易": {
+      "正面": 0,
+      "中性": 6,
+      "负面": 0,
+      "总数": 6,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "结局": {
+      "正面": 0,
+      "中性": 6,
+      "负面": 0,
+      "总数": 6,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "感情": {
+      "正面": 0,
+      "中性": 5,
+      "负面": 0,
+      "总数": 5,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "眼睛": {
+      "正面": 0,
+      "中性": 5,
+      "负面": 0,
+      "总数": 5,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "人生": {
+      "正面": 0,
+      "中性": 5,
+      "负面": 0,
+      "总数": 5,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "谢谢": {
+      "正面": 0,
+      "中性": 5,
+      "负面": 0,
+      "总数": 5,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "音乐": {
+      "正面": 0,
+      "中性": 5,
+      "负面": 0,
+      "总数": 5,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "天气": {
+      "正面": 0,
+      "中性": 5,
+      "负面": 0,
+      "总数": 5,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "声音": {
+      "正面": 0,
+      "中性": 5,
+      "负面": 0,
+      "总数": 5,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "内耗": {
+      "正面": 1,
+      "中性": 3,
+      "负面": 0,
+      "总数": 4,
+      "样例": {},
+      "正面比例": 0.25,
+      "中性比例": 0.75,
+      "负面比例": 0.0
+    },
+    "黑名单": {
+      "正面": 0,
+      "中性": 4,
+      "负面": 0,
+      "总数": 4,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "日子": {
+      "正面": 3,
+      "中性": 1,
+      "负面": 0,
+      "总数": 4,
+      "样例": {},
+      "正面比例": 0.75,
+      "中性比例": 0.25,
+      "负面比例": 0.0
+    },
+    "大家": {
+      "正面": 1,
+      "中性": 3,
+      "负面": 0,
+      "总数": 4,
+      "样例": {},
+      "正面比例": 0.25,
+      "中性比例": 0.75,
+      "负面比例": 0.0
+    },
+    "生日快乐": {
+      "正面": 0,
+      "中性": 4,
+      "负面": 0,
+      "总数": 4,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "热情": {
+      "正面": 4,
+      "中性": 0,
+      "负面": 0,
+      "总数": 4,
+      "样例": {},
+      "正面比例": 1.0,
+      "中性比例": 0.0,
+      "负面比例": 0.0
+    },
+    "明白": {
+      "正面": 1,
+      "中性": 3,
+      "负面": 0,
+      "总数": 4,
+      "样例": {},
+      "正面比例": 0.25,
+      "中性比例": 0.75,
+      "负面比例": 0.0
+    },
+    "甘心": {
+      "正面": 0,
+      "中性": 4,
+      "负面": 0,
+      "总数": 4,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "意思": {
+      "正面": 0,
+      "中性": 4,
+      "负面": 0,
+      "总数": 4,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "小孩": {
+      "正面": 0,
+      "中性": 4,
+      "负面": 0,
+      "总数": 4,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "小狗": {
+      "正面": 0,
+      "中性": 4,
+      "负面": 0,
+      "总数": 4,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "脾气": {
+      "正面": 0,
+      "中性": 4,
+      "负面": 0,
+      "总数": 4,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "结果": {
+      "正面": 0,
+      "中性": 4,
+      "负面": 0,
+      "总数": 4,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "有点": {
+      "正面": 0,
+      "中性": 4,
+      "负面": 0,
+      "总数": 4,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "聊天记录": {
+      "正面": 0,
+      "中性": 4,
+      "负面": 0,
+      "总数": 4,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "经历": {
+      "正面": 0,
+      "中性": 4,
+      "负面": 0,
+      "总数": 4,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "太阳": {
+      "正面": 0,
+      "中性": 4,
+      "负面": 0,
+      "总数": 4,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "机会": {
+      "正面": 0,
+      "中性": 3,
+      "负面": 0,
+      "总数": 3,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "学会": {
+      "正面": 0,
+      "中性": 3,
+      "负面": 0,
+      "总数": 3,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "普通": {
+      "正面": 1,
+      "中性": 2,
+      "负面": 0,
+      "总数": 3,
+      "样例": {},
+      "正面比例": 0.3333333333333333,
+      "中性比例": 0.6666666666666666,
+      "负面比例": 0.0
+    },
+    "释怀": {
+      "正面": 0,
+      "中性": 3,
+      "负面": 0,
+      "总数": 3,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "亲亲": {
+      "正面": 0,
+      "中性": 3,
+      "负面": 0,
+      "总数": 3,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "新鲜感": {
+      "正面": 0,
+      "中性": 3,
+      "负面": 0,
+      "总数": 3,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "男孩": {
+      "正面": 1,
+      "中性": 2,
+      "负面": 0,
+      "总数": 3,
+      "样例": {},
+      "正面比例": 0.3333333333333333,
+      "中性比例": 0.6666666666666666,
+      "负面比例": 0.0
+    },
+    "陌路": {
+      "正面": 3,
+      "中性": 0,
+      "负面": 0,
+      "总数": 3,
+      "样例": {},
+      "正面比例": 1.0,
+      "中性比例": 0.0,
+      "负面比例": 0.0
+    },
+    "名字": {
+      "正面": 0,
+      "中性": 3,
+      "负面": 0,
+      "总数": 3,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "淋雨": {
+      "正面": 1,
+      "中性": 2,
+      "负面": 0,
+      "总数": 3,
+      "样例": {},
+      "正面比例": 0.3333333333333333,
+      "中性比例": 0.6666666666666666,
+      "负面比例": 0.0
+    },
+    "方式": {
+      "正面": 0,
+      "中性": 3,
+      "负面": 0,
+      "总数": 3,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "麻木": {
+      "正面": 0,
+      "中性": 3,
+      "负面": 0,
+      "总数": 3,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "主页": {
+      "正面": 0,
+      "中性": 3,
+      "负面": 0,
+      "总数": 3,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "怎么办": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 1,
+      "总数": 3,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 0.6666666666666666,
+      "负面比例": 0.3333333333333333
+    },
+    "记忆": {
+      "正面": 2,
+      "中性": 1,
+      "负面": 0,
+      "总数": 3,
+      "样例": {},
+      "正面比例": 0.6666666666666666,
+      "中性比例": 0.3333333333333333,
+      "负面比例": 0.0
+    },
+    "故事": {
+      "正面": 0,
+      "中性": 3,
+      "负面": 0,
+      "总数": 3,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "誓言": {
+      "正面": 1,
+      "中性": 2,
+      "负面": 0,
+      "总数": 3,
+      "样例": {},
+      "正面比例": 0.3333333333333333,
+      "中性比例": 0.6666666666666666,
+      "负面比例": 0.0
+    },
+    "无人": {
+      "正面": 0,
+      "中性": 3,
+      "负面": 0,
+      "总数": 3,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "蛋糕": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 2,
+      "总数": 3,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 0.3333333333333333,
+      "负面比例": 0.6666666666666666
+    },
+    "妈妈": {
+      "正面": 0,
+      "中性": 3,
+      "负面": 0,
+      "总数": 3,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "好想哭": {
+      "正面": 3,
+      "中性": 0,
+      "负面": 0,
+      "总数": 3,
+      "样例": {},
+      "正面比例": 1.0,
+      "中性比例": 0.0,
+      "负面比例": 0.0
+    },
+    "泪水": {
+      "正面": 0,
+      "中性": 3,
+      "负面": 0,
+      "总数": 3,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "性格": {
+      "正面": 0,
+      "中性": 3,
+      "负面": 0,
+      "总数": 3,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "薄情": {
+      "正面": 0,
+      "中性": 3,
+      "负面": 0,
+      "总数": 3,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "共情": {
+      "正面": 0,
+      "中性": 3,
+      "负面": 0,
+      "总数": 3,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "对不起": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 1,
+      "总数": 3,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 0.6666666666666666,
+      "负面比例": 0.3333333333333333
+    },
+    "生气": {
+      "正面": 0,
+      "中性": 3,
+      "负面": 0,
+      "总数": 3,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "总会": {
+      "正面": 0,
+      "中性": 3,
+      "负面": 0,
+      "总数": 3,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "天真": {
+      "正面": 0,
+      "中性": 3,
+      "负面": 0,
+      "总数": 3,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "青春": {
+      "正面": 0,
+      "中性": 3,
+      "负面": 0,
+      "总数": 3,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "答案": {
+      "正面": 0,
+      "中性": 3,
+      "负面": 0,
+      "总数": 3,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "意志": {
+      "正面": 0,
+      "中性": 3,
+      "负面": 0,
+      "总数": 3,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "消息": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "能力": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "吉言": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "争气": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "对象": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "给我发": {
+      "正面": 1,
+      "中性": 1,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.5,
+      "中性比例": 0.5,
+      "负面比例": 0.0
+    },
+    "双向": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "好想你": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "世间": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "下定决心": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "枫叶": {
+      "正面": 2,
+      "中性": 0,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 1.0,
+      "中性比例": 0.0,
+      "负面比例": 0.0
+    },
+    "烟味": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "奶茶": {
+      "正面": 1,
+      "中性": 1,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.5,
+      "中性比例": 0.5,
+      "负面比例": 0.0
+    },
+    "人格": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "陪你走": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "情感": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "总有一天": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "中考": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "时代": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "情话": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "午安": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "爱里": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "边缘": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "有时候": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "手机": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "体验": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "教会": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 1,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 0.5,
+      "负面比例": 0.5
+    },
+    "事情": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "无法": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "别吵": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "样子": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "人家": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "老师": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "深层": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "问题": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "树叶": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "爱我吗": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "女孩": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "手臂": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "地方": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "没什么": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "小红花": {
+      "正面": 1,
+      "中性": 1,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.5,
+      "中性比例": 0.5,
+      "负面比例": 0.0
+    },
+    "是不是": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "理想": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "事事": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "见面": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "模样": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "未成年": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "东西": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "没关系": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "心情": {
+      "正面": 1,
+      "中性": 1,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.5,
+      "中性比例": 0.5,
+      "负面比例": 0.0
+    },
+    "思念": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "语气": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "眼眶": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "角色": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "阴晴不定": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "天意": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "寡义": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "稳赢": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "总以为": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "距离": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "欲言又止": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "靠山": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "挚爱": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "太好了": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "太累": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "总想": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "受不了": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "缘分": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "官方": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "头像": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "可有可无": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "友情": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "星星": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "优点": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "单曲": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "板凳": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "兄弟": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "小学生": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "伤感": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "消失": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "人会": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "山河": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "小事": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "受委屈": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "早安": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "耳机": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "隔阂": {
+      "正面": 1,
+      "中性": 1,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.5,
+      "中性比例": 0.5,
+      "负面比例": 0.0
+    },
+    "太难": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "习惯": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "豪庭": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "安静": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "玫瑰": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "屏幕": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "呜呜": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "聊天": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "新人": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "外界": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "静音": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "评论": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "不懂事": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "绝情": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "假装": {
+      "正面": 0,
+      "中性": 2,
+      "负面": 0,
+      "总数": 2,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "真话": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "鼻酸": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "空房间": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "满鲜花": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "颜料": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "画花": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "闹矛盾": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "伤心": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "不争气": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "好日子": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "胡海威": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "伴侣": {
+      "正面": 1,
+      "中性": 0,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 1.0,
+      "中性比例": 0.0,
+      "负面比例": 0.0
+    },
+    "心意": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "基本": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "引导性": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "发工资": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "万物": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "晨雾": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "个角": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "个人": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "四川": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "女孩子": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "睡觉觉": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "家里人": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "全世界": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "老实": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "手动": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "狗头": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "有所": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "鬼脸": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "爱意": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "毫无意义": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "动态": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "许愿树": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "班主任": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "条路": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "心想": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "体质": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "同感": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "有缘": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "无缘": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "语音": {
+      "正面": 1,
+      "中性": 0,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 1.0,
+      "中性比例": 0.0,
+      "负面比例": 0.0
+    },
+    "人说": {
+      "正面": 1,
+      "中性": 0,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 1.0,
+      "中性比例": 0.0,
+      "负面比例": 0.0
+    },
+    "吐舌": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "境界": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "不经意": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "冷冰冰": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "代表": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "玄学": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "命中注定": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "末班车": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "对我讲": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "白羊": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "商雨菡": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "证明": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "妈咪": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "爱多": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "郭梦红": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "银针": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "时光": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "空虚": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "啊啊啊": {
+      "正面": 1,
+      "中性": 0,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 1.0,
+      "中性比例": 0.0,
+      "负面比例": 0.0
+    },
+    "借口": {
+      "正面": 1,
+      "中性": 0,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 1.0,
+      "中性比例": 0.0,
+      "负面比例": 0.0
+    },
+    "数星": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "世俗": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "旷野": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "轨道": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "多情": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "记性": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "阿福": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "大宝": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "平平安安": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "梦想": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "没意思": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "信息": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "安瑞敏": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "不舍": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "版权": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "上学": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "课文": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "嗓音": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "体会": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "精神": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "内核": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "青烟": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "雨点": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "上帝": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "心思": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "物质": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "废话": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "泪流满面": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "链接": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "红肿": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "鼻音": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "痕迹": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "梧桐树": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "盲盒": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "故作": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "风生水": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "花瓶": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "废品": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "花钱": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "妹王": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "本能": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "无辜": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "风筝": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "情难": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "老电影": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "两色": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "过会": {
+      "正面": 1,
+      "中性": 0,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 1.0,
+      "中性比例": 0.0,
+      "负面比例": 0.0
+    },
+    "西西": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "真的假": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "楼丝": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "存款": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "十位数": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "波澜": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "企图": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "晚点": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "拜拜": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "台阶": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "上上下下": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "王子": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "李嘉梁": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "不止一次": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "傻子": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "账号": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "鹿晗": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "老師": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "阿彌": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "陀佛": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "好久不见": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "歌迷": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "预告片": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "期末考": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "成绩": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "听的歌": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "互粉": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "淋淋": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "一路顺风": {
+      "正面": 1,
+      "中性": 0,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 1.0,
+      "中性比例": 0.0,
+      "负面比例": 0.0
+    },
+    "祝澈澈": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "低头": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "味道": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "雪花": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "不平": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "圆周率": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "人们": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "落叶": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "伤痕累累": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "电影": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "运气": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "荣幸": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "别忘了": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "充满希望": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "楼顶": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "悄无声息": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "团体照": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "理智": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "罐头": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "淋湿": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "到头来": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "没骨气": {
+      "正面": 1,
+      "中性": 0,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 1.0,
+      "中性比例": 0.0,
+      "负面比例": 0.0
+    },
+    "云南": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "情头": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "一条线": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "知名度": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "唱歌": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "含泪": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "辛福": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "背影": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "时刻": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "软肋": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "氛围": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "重磅": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "炸弹": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "缺点": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "粉丝": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "倒计时": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "鼻子": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "做人": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "太天真": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "天津": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "甘肃": {
+      "正面": 1,
+      "中性": 0,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 1.0,
+      "中性比例": 0.0,
+      "负面比例": 0.0
+    },
+    "静静": {
+      "正面": 1,
+      "中性": 0,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 1.0,
+      "中性比例": 0.0,
+      "负面比例": 0.0
+    },
+    "滴滴": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "安安全全": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "大胆": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "全都": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "播放器": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "小小年纪": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "浪费时间": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "证据": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "无条件": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "全部": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "满目": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "意识": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "山高路远": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "行李": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "太多人": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "彩票": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "全市": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "江苏": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "小子": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "看清楚": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "骗人": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "两码事": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "云热": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "耍酷": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "公交车": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "学校": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "静谧": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "仙境": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "皇帝": {
+      "正面": 1,
+      "中性": 0,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 1.0,
+      "中性比例": 0.0,
+      "负面比例": 0.0
+    },
+    "福建": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "正大光明": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "原地": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "找我聊": {
+      "正面": 1,
+      "中性": 0,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 1.0,
+      "中性比例": 0.0,
+      "负面比例": 0.0
+    },
+    "牛奶": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "哥哥": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "躲藏着": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "戳戳": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "爱能": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "廉价": {
+      "正面": 0,
+      "中性": 0,
+      "负面": 1,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 0.0,
+      "负面比例": 1.0
+    },
+    "戎装": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "凌云志": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "少年郎": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "军装": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "热血": {
+      "正面": 1,
+      "中性": 0,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 1.0,
+      "中性比例": 0.0,
+      "负面比例": 0.0
+    },
+    "汗水": {
+      "正面": 1,
+      "中性": 0,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 1.0,
+      "中性比例": 0.0,
+      "负面比例": 0.0
+    },
+    "淬炼": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "成钢": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "军营": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "熔炉": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "盾牌": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "枪膛": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "报国": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "光芒": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "风雨": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "祖国": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "人民": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "买球": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "黑夜": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "常态": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "这段话": {
+      "正面": 1,
+      "中性": 0,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 1.0,
+      "中性比例": 0.0,
+      "负面比例": 0.0
+    },
+    "长大": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "周全": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "闪闪发光": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "自带": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "宝贝": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "太久": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "异性": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "感情纠葛": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "态度": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "不介意": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "莫非": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "道理": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "主角": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "大王": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "安全感": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "差点": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "视频": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "电话": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "情况": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "热度": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "底气": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "凡事": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "交代": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "有着落": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "大事": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "性子": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "声色": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "张扬": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "正儿八经": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "偏心": {
+      "正面": 1,
+      "中性": 0,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 1.0,
+      "中性比例": 0.0,
+      "负面比例": 0.0
+    },
+    "高中生": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "目标": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "心仪": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "大学": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "麦门": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "神曲": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "长谈": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "芜湖": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "亲眼看到": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "思绪": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "歌单": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "泥潭": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "小耶爱": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "花卷": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "讲话": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "风景": {
+      "正面": 1,
+      "中性": 0,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 1.0,
+      "中性比例": 0.0,
+      "负面比例": 0.0
+    },
+    "准备考": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "警校": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "私人物品": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "欧丽娟": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "流着泪": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "必修课": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "上辈子": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "笔记": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "对不上": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "时隔多年": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "高分": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "枯木": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "钟情": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "感同身受": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "异地": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "喜乐": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "海啸": {
+      "正面": 1,
+      "中性": 0,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 1.0,
+      "中性比例": 0.0,
+      "负面比例": 0.0
+    },
+    "山鸣": {
+      "正面": 1,
+      "中性": 0,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 1.0,
+      "中性比例": 0.0,
+      "负面比例": 0.0
+    },
+    "太巧": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "礼貌": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "干嘛": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "干什么": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "品味": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "对面": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "牺牲品": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "伤疤": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "安徒生": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "爱人": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "再也不会": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "骗子": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "看了又看": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "故地重游": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "对方": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "隐喻": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "事在人为": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "话题": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "金钱": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "安眠药": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "玩玩": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "口罩": {
+      "正面": 1,
+      "中性": 0,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 1.0,
+      "中性比例": 0.0,
+      "负面比例": 0.0
+    },
+    "小鑫": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "小允": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "作息": {
+      "正面": 1,
+      "中性": 0,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 1.0,
+      "中性比例": 0.0,
+      "负面比例": 0.0
+    },
+    "甜妹": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "库里南": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "段子": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "医生": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "低血糖": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    },
+    "姐姐": {
+      "正面": 0,
+      "中性": 1,
+      "负面": 0,
+      "总数": 1,
+      "样例": {},
+      "正面比例": 0.0,
+      "中性比例": 1.0,
+      "负面比例": 0.0
+    }
+  }
+}

@@ -1,0 +1,339 @@
+<!-- templates/advanced_analysis.html -->
+{% extends "base.html" %}
+
+{% block title %}高级分析 - 多源数据情感分析系统{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h2><i class="fas fa-brain"></i> 高级分析功能</h2>
+            </div>
+            <div class="card-body">
+                {% if error %}
+                <div class="alert alert-danger">{{ error }}</div>
+                {% endif %}
+                
+                {% if not file %}
+                <div class="alert alert-info">
+                    <i class="fas fa-info-circle"></i> 请先<a href="{{ url_for('upload_file') }}">上传数据</a>或<a href="{{ url_for('crawl_data') }}">爬取数据</a>，然后再使用高级分析功能。
+                </div>
+                {% else %}
+                <form id="advancedAnalysisForm">
+                    <input type="hidden" name="file" value="{{ file }}">
+                    
+                    <p class="lead">选择要执行的高级分析功能：</p>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" name="analysis_types" id="ner" value="ner" checked>
+                                <label class="form-check-label" for="ner">
+                                    <strong>命名实体识别（NER）</strong>
+                                </label>
+                                <div class="form-text">识别文本中的人名、地名、组织机构等实体</div>
+                            </div>
+                            
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" name="analysis_types" id="dependency" value="dependency" checked>
+                                <label class="form-check-label" for="dependency">
+                                    <strong>依存句法分析</strong>
+                                </label>
+                                <div class="form-text">分析句子中词语之间的依存关系</div>
+                            </div>
+                            
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" name="analysis_types" id="keywords" value="keywords" checked>
+                                <label class="form-check-label" for="keywords">
+                                    <strong>关键词抽取</strong>
+                                </label>
+                                <div class="form-text">使用TextRank/TF-IDF算法抽取文本关键词</div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" name="analysis_types" id="summary" value="summary" checked>
+                                <label class="form-check-label" for="summary">
+                                    <strong>文本摘要</strong>
+                                </label>
+                                <div class="form-text">自动生成文本摘要，提取重要信息</div>
+                            </div>
+                            
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" name="analysis_types" id="topic" value="topic" checked>
+                                <label class="form-check-label" for="topic">
+                                    <strong>主题建模</strong>
+                                </label>
+                                <div class="form-text">LDA/NMF主题模型，发现文本主题</div>
+                            </div>
+                            
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" name="analysis_types" id="aspect" value="aspect" checked>
+                                <label class="form-check-label" for="aspect">
+                                    <strong>方面级情感分析</strong>
+                                </label>
+                                <div class="form-text">细粒度情感分析，识别具体方面的情感倾向</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card mb-3">
+                        <div class="card-header">高级参数设置</div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="topic_num" class="form-label">主题数量</label>
+                                        <input type="number" class="form-control" id="topic_num" name="topic_num" min="2" max="20" value="5">
+                                        <div class="form-text">建议值：3-10，数据量大时可以增加</div>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="summary_length" class="form-label">摘要句子数</label>
+                                        <input type="number" class="form-control" id="summary_length" name="summary_length" min="1" max="10" value="3">
+                                        <div class="form-text">摘要生成的句子数量</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="keyword_num" class="form-label">关键词数量</label>
+                                        <input type="number" class="form-control" id="keyword_num" name="keyword_num" min="5" max="50" value="20">
+                                        <div class="form-text">为每篇文档抽取的关键词数量</div>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="ner_model" class="form-label">NER模型选择</label>
+                                        <select class="form-select" id="ner_model" name="ner_model">
+                                            <option value="default" selected>默认模型 (基于jieba)</option>
+                                            <option value="bert">BERT模型 (更精确但较慢)</option>
+                                            {% if hanlp_available %}
+                                            <option value="hanlp">HanLP模型</option>
+                                            {% endif %}
+                                            {% if lac_available %}
+                                            <option value="lac">百度LAC模型</option>
+                                            {% endif %}
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" id="startAdvancedBtn">
+                        <i class="fas fa-play-circle"></i> 开始高级分析
+                    </button>
+                </form>
+                
+                <div class="loading" id="loadingIndicator" style="display: none;">
+                    <div class="text-center">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">正在分析...</span>
+                        </div>
+                        <p class="mt-2">正在进行高级分析，请耐心等待...</p>
+                        <p class="text-muted">根据选择的分析类型和数据量，可能需要几分钟时间</p>
+                    </div>
+                </div>
+
+                <div class="progress mt-3" id="progressBar" style="display: none;">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="text-center mt-2" id="progressModule" style="display: none;"></div>
+                <div class="text-center mt-1" id="progressText" style="display: none;"></div>
+                
+                <div class="alert alert-danger mt-3" id="errorMessage" style="display: none;"></div>
+                <div class="alert alert-success mt-3" id="successMessage" style="display: none;">
+                    <i class="fas fa-check-circle"></i> 高级分析完成！
+                    <div class="text-center mt-2">
+                        <a href="{{ url_for('advanced_results', file=file) }}" class="btn btn-success">查看分析结果</a>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        
+        <div class="card mt-4">
+            <div class="card-header">
+                <h4>高级分析功能说明</h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5><i class="fas fa-id-card-alt"></i> 命名实体识别 (NER)</h5>
+                                <p>识别文本中的命名实体，包括人名、地名、组织机构名、产品名等。</p>
+                                <p>应用场景：了解用户关注的具体实体，分析特定实体的情感倾向。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5><i class="fas fa-project-diagram"></i> 依存句法分析</h5>
+                                <p>分析句子中词语之间的句法依存关系，深入理解句子结构。</p>
+                                <p>应用场景：复杂句子的情感分析，细粒度语义理解，语法错误检测。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5><i class="fas fa-key"></i> 关键词抽取</h5>
+                                <p>使用TextRank或TF-IDF算法抽取文本中的关键词和关键短语。</p>
+                                <p>应用场景：内容标签生成，热点话题发现，文本索引和检索。</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5><i class="fas fa-file-alt"></i> 文本摘要</h5>
+                                <p>自动生成文本摘要，提取文本中的重要信息和核心内容。</p>
+                                <p>应用场景：长文本浏览预览，内容摘要生成，信息压缩。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5><i class="fas fa-th-large"></i> 主题建模</h5>
+                                <p>使用LDA或NMF等统计模型发现文本集合中的隐含主题。</p>
+                                <p>应用场景：文本聚类，主题发现，内容归类，相似文档推荐。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5><i class="fas fa-balance-scale"></i> 方面级情感分析</h5>
+                                <p>细粒度情感分析，识别文本中特定方面或属性的情感倾向。</p>
+                                <p>应用场景：产品多属性评价分析，竞品分析，细粒度民意调查。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        {% if file %}
+        const analysisForm = document.getElementById('advancedAnalysisForm');
+        const startAdvancedBtn = document.getElementById('startAdvancedBtn');
+        const loadingIndicator = document.getElementById('loadingIndicator');
+        const errorMessage = document.getElementById('errorMessage');
+        const successMessage = document.getElementById('successMessage');
+        const progressBar = document.getElementById('progressBar');
+        const progressBarInner = progressBar.querySelector('.progress-bar');
+        const progressModule = document.getElementById('progressModule');
+        const progressText = document.getElementById('progressText');
+        
+        let progressInterval;
+        
+        function updateProgress() {
+            fetch('/progress?type=advanced')
+                .then(response => response.json())
+                .then(data => {
+                    const { current, total, status, message, current_module } = data;
+                    
+                    if (total > 0) {
+                        const percent = Math.round((current / total) * 100);
+                        progressBarInner.style.width = `${percent}%`;
+                        progressBarInner.setAttribute('aria-valuenow', percent);
+                        
+                        if (current_module) {
+                            progressModule.textContent = `当前模块: ${current_module}`;
+                        }
+                        
+                        if (message) {
+                            progressText.textContent = message;
+                        }
+                    }
+                    
+                    if (status === 'completed') {
+                        clearInterval(progressInterval);
+                        loadingIndicator.style.display = 'none';
+                        progressBar.style.display = 'none';
+                        progressModule.style.display = 'none';
+                        progressText.style.display = 'none';
+                        successMessage.style.display = 'block';
+                    } else if (status === 'error') {
+                        clearInterval(progressInterval);
+                        loadingIndicator.style.display = 'none';
+                        progressBar.style.display = 'none';
+                        progressModule.style.display = 'none';
+                        progressText.style.display = 'none';
+                        errorMessage.textContent = message || '高级分析失败，请重试';
+                        errorMessage.style.display = 'block';
+                        startAdvancedBtn.disabled = false;
+                    }
+                })
+                .catch(error => {
+                    console.error('获取进度信息失败:', error);
+                });
+        }
+        
+        analysisForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // 显示加载指示器和进度条
+            loadingIndicator.style.display = 'flex';
+            progressBar.style.display = 'block';
+            progressModule.style.display = 'block';
+            progressText.style.display = 'block';
+            startAdvancedBtn.disabled = true;
+            errorMessage.style.display = 'none';
+            successMessage.style.display = 'none';
+            
+            // 获取表单数据
+            const formData = new FormData(analysisForm);
+            
+            // 发送AJAX请求
+            fetch('/process_advanced', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                // 处理响应数据
+                if (data.status !== 'success') {
+                    // 显示错误消息
+                    errorMessage.textContent = data.message || '高级分析失败，请重试';
+                    errorMessage.style.display = 'block';
+                    startAdvancedBtn.disabled = false;
+                    
+                    // 隐藏加载指示器和进度条
+                    loadingIndicator.style.display = 'none';
+                    progressBar.style.display = 'none';
+                    progressModule.style.display = 'none';
+                    progressText.style.display = 'none';
+                    
+                    clearInterval(progressInterval);
+                }
+            })
+            .catch(error => {
+                // 隐藏加载指示器和进度条
+                loadingIndicator.style.display = 'none';
+                progressBar.style.display = 'none';
+                progressModule.style.display = 'none';
+                progressText.style.display = 'none';
+                
+                // 显示错误消息
+                errorMessage.textContent = '请求失败：' + error.message;
+                errorMessage.style.display = 'block';
+                startAdvancedBtn.disabled = false;
+                
+                clearInterval(progressInterval);
+            });
+            
+            // 启动进度更新
+            progressInterval = setInterval(updateProgress, 1000);
+        });
+        {% endif %}
+    });
+</script>
+{% endblock %}

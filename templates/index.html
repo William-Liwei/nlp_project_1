@@ -1,0 +1,152 @@
+<!-- templates/index.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h2><i class="fas fa-home"></i> 欢迎使用多源数据情感分析系统</h2>
+            </div>
+            <div class="card-body">
+                <p class="lead">本系统基于BERT模型，可分析来自多个平台的评论数据，探索用户情感和观点。</p>
+                
+                <div class="row mt-4">
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-spider text-primary" style="font-size: 3rem;"></i>
+                                <h4 class="mt-3">爬取数据</h4>
+                                <p>从豆瓣、京东、网易云音乐等平台爬取评论数据</p>
+                                <a href="{{ url_for('crawl_data') }}" class="btn btn-primary">开始爬取</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-file-upload text-success" style="font-size: 3rem;"></i>
+                                <h4 class="mt-3">上传数据</h4>
+                                <p>上传已有的评论数据文件进行情感分析</p>
+                                <a href="{{ url_for('upload_file') }}" class="btn btn-success">上传文件</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-comment-dots text-info" style="font-size: 3rem;"></i>
+                                <h4 class="mt-3">文本分析</h4>
+                                <p>直接输入文本进行情感分析</p>
+                                <a href="{{ url_for('analyze_text') }}" class="btn btn-info">开始分析</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-4">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>系统功能</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h5><i class="fas fa-check-circle text-success"></i> 多源数据爬取</h5>
+                                        <p>支持从豆瓣电影、京东商品、网易云音乐等多个平台爬取评论数据</p>
+                                        
+                                        <h5><i class="fas fa-check-circle text-success"></i> 数据预处理</h5>
+                                        <p>文本清洗、中文分词、去停用词等预处理功能</p>
+                                        
+                                        <h5><i class="fas fa-check-circle text-success"></i> BERT情感分析</h5>
+                                        <p>使用先进的BERT模型进行情感分类，支持多级情感分析</p>
+                                    </div>
+                                    
+                                    <div class="col-md-6">
+                                        <h5><i class="fas fa-check-circle text-success"></i> 可视化分析</h5>
+                                        <p>情感分布、平台对比、词云图、情感趋势等多种可视化展示</p>
+                                        
+                                        <h5><i class="fas fa-check-circle text-success"></i> 模型评估</h5>
+                                        <p>提供准确率、混淆矩阵等模型评估指标</p>
+                                        
+                                        <h5><i class="fas fa-check-circle text-success"></i> 用户友好界面</h5>
+                                        <p>简洁直观的Web界面，便于操作和结果查看</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row mt-4">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h4>已有分析结果</h4>
+            </div>
+            <div class="card-body">
+                {% if result_files %}
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>创建时间</th>
+                                <th>文件大小</th>
+                                <th>基础分析</th>
+                                <th>高级分析</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for file in result_files %}
+                            <tr>
+                                <td>{{ file.creation_time }}</td>
+                                <td>{{ file.size }}</td>
+                                <td>
+                                    {% if file.has_results %}
+                                    <a href="{{ url_for('results', file=file.filename) }}" class="btn btn-sm btn-primary">
+                                        <i class="fas fa-chart-bar"></i> 查看结果
+                                    </a>
+                                    <a href="{{ url_for('analysis', file=file.filename) }}" class="btn btn-sm btn-outline-primary">
+                                        <i class="fas fa-play"></i> 重新分析
+                                    </a>
+                                    {% else %}
+                                    <a href="{{ url_for('analysis', file=file.filename) }}" class="btn btn-sm btn-outline-primary">
+                                        <i class="fas fa-play"></i> 开始分析
+                                    </a>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    {% if file.has_advanced_results %}
+                                    <a href="{{ url_for('advanced_results', file=file.filename) }}" class="btn btn-sm btn-success">
+                                        <i class="fas fa-brain"></i> 查看高级结果
+                                    </a>
+                                    <a href="{{ url_for('advanced_analysis', file=file.filename) }}" class="btn btn-sm btn-outline-success">
+                                        <i class="fas fa-cogs"></i> 重新高级分析
+                                    </a>
+                                    {% else %}
+                                    <a href="{{ url_for('advanced_analysis', file=file.filename) }}" class="btn btn-sm btn-outline-success">
+                                        <i class="fas fa-cogs"></i> 高级分析
+                                    </a>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% else %}
+                <div class="alert alert-info">
+                    <i class="fas fa-info-circle"></i> 目前没有已分析的数据。请先爬取或上传数据进行分析。
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,509 @@
+<!-- templates/advanced_results.html -->
+{% extends "base.html" %}
+
+{% block title %}高级分析结果 - 多源数据情感分析系统{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h2><i class="fas fa-chart-bar"></i> 高级分析结果</h2>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-success">
+                    <i class="fas fa-check-circle"></i> 已成功完成 <strong>{{ total_count }}</strong> 条数据的高级分析
+                </div>
+                
+                <!-- 分析概览 -->
+                <div class="row mt-4">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>分析概览</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    {% if ner_stats %}
+                                    <div class="col-md-4">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h5 class="card-title"><i class="fas fa-id-card-alt"></i> 命名实体</h5>
+                                                <p class="lead">共识别 <strong>{{ ner_stats.total_count }}</strong> 个实体</p>
+                                                <ul class="list-group list-group-flush">
+                                                    {% for entity_type, count in ner_stats.type_distribution.items() %}
+                                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                        {{ entity_type }}
+                                                        <span class="badge bg-primary rounded-pill">{{ count }}</span>
+                                                    </li>
+                                                    {% endfor %}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                    
+                                    {% if keywords %}
+                                    <div class="col-md-4">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h5 class="card-title"><i class="fas fa-key"></i> 热门关键词</h5>
+                                                <div class="d-flex flex-wrap">
+                                                    {% for keyword, weight in keywords[:15] %}
+                                                    <span class="badge bg-info text-dark m-1" style="font-size: {{ (weight * 0.3 + 10)|int }}%;">{{ keyword }}</span>
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                    
+                                    {% if topics %}
+                                    <div class="col-md-4">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h5 class="card-title"><i class="fas fa-th-large"></i> 主题分布</h5>
+                                                <ul class="list-group list-group-flush">
+                                                    {% for topic_id, topic_words in topics %}
+                                                    <li class="list-group-item">
+                                                        <strong>主题{{ topic_id }}:</strong> 
+                                                        {% for word, _ in topic_words[:5] %}
+                                                        {{ word }}{% if not loop.last %}, {% endif %}
+                                                        {% endfor %}
+                                                    </li>
+                                                    {% endfor %}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h4 class="mt-4">可视化结果</h4>
+                
+                <!-- 命名实体识别结果 -->
+                {% if 'ner' in analysis_types %}
+                <div class="row mt-3">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5><i class="fas fa-id-card-alt"></i> 命名实体识别结果</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6 visualization-container">
+                                        <img src="{{ url_for('static', filename='visualizations/advanced/entity_distribution.png') }}" class="img-fluid" alt="实体类型分布">
+                                        <p class="text-center mt-2">实体类型分布</p>
+                                    </div>
+                                    
+                                    {% if ner_stats and ner_stats.top_entities %}
+                                    <div class="col-md-6">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h6>热门实体</h6>
+                                            </div>
+                                            <div class="card-body">
+                                                <nav>
+                                                    <div class="nav nav-tabs" id="entity-tab" role="tablist">
+                                                        {% for entity_type in ner_stats.top_entities.keys() %}
+                                                        <button class="nav-link {% if loop.first %}active{% endif %}" id="entity-{{ entity_type }}-tab" data-bs-toggle="tab" data-bs-target="#entity-{{ entity_type }}" type="button" role="tab">{{ entity_type }}</button>
+                                                        {% endfor %}
+                                                    </div>
+                                                </nav>
+                                                <div class="tab-content mt-2" id="entity-tabContent">
+                                                    {% for entity_type, entities in ner_stats.top_entities.items() %}
+                                                    <div class="tab-pane fade {% if loop.first %}show active{% endif %}" id="entity-{{ entity_type }}" role="tabpanel">
+                                                        <ul class="list-group">
+                                                            {% for entity, count in entities %}
+                                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                                {{ entity }}
+                                                                <span class="badge bg-primary rounded-pill">{{ count }}</span>
+                                                            </li>
+                                                            {% endfor %}
+                                                        </ul>
+                                                    </div>
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                </div>
+                                
+                                <div class="row mt-3">
+                                    <div class="col-md-12">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h6>示例文本实体标注</h6>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="alert alert-info">
+                                                    以下是从数据中随机选择的文本，显示了实体识别效果（不同颜色背景表示不同类型的实体）
+                                                </div>
+                                                {% if ner_samples %}
+                                                <div class="list-group">
+                                                    {% for text, html in ner_samples %}
+                                                    <div class="list-group-item">
+                                                        <p><strong>原文：</strong> {{ text }}</p>
+                                                        <p><strong>实体标注：</strong> {{ html|safe }}</p>
+                                                    </div>
+                                                    {% endfor %}
+                                                </div>
+                                                {% else %}
+                                                <p>未找到实体标注示例</p>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                
+                <!-- 依存句法分析结果 -->
+                {% if 'dependency' in analysis_types %}
+                <div class="row mt-3">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5><i class="fas fa-project-diagram"></i> 依存句法分析结果</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="alert alert-info">
+                                    依存句法分析展示了句子中词语之间的依存关系，帮助理解句子结构。以下是从数据中选择的示例文本的依存句法分析结果。
+                                </div>
+                                
+                                {% if dependency_samples %}
+                                <div class="row">
+                                    {% for text, html in dependency_samples %}
+                                        <div class="col-md-6 mb-3">
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h6>示例 {{ loop.index }}</h6>
+                                                </div>
+                                                <div class="card-body">
+                                                    <p><strong>原文：</strong> {{ text }}</p>
+                                                    <div class="mt-3">
+                                                        {{ html|safe }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                                {% else %}
+                                <p>未找到依存句法分析示例</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                
+                <!-- 关键词抽取结果 -->
+                {% if 'keywords' in analysis_types %}
+                <div class="row mt-3">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5><i class="fas fa-key"></i> 关键词抽取结果</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6 visualization-container">
+                                        <img src="{{ url_for('static', filename='visualizations/keyword_cloud.png') }}" class="img-fluid" alt="关键词云">
+                                        <p class="text-center mt-2">关键词云</p>
+                                    </div>
+                                    
+                                    <div class="col-md-6 visualization-container">
+                                        <img src="{{ url_for('static', filename='visualizations/top_keywords.png') }}" class="img-fluid" alt="Top关键词">
+                                        <p class="text-center mt-2">Top关键词</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="row mt-3">
+                                    <div class="col-md-12">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h6>文本关键词示例</h6>
+                                            </div>
+                                            <div class="card-body">
+                                                {% if keyword_samples %}
+                                                <div class="list-group">
+                                                    {% for text, keywords in keyword_samples %}
+                                                    <div class="list-group-item">
+                                                        <p><strong>原文：</strong> {{ text }}</p>
+                                                        <p><strong>关键词：</strong> 
+                                                            {% for keyword, weight in keywords %}
+                                                            <span class="badge bg-info text-dark m-1">{{ keyword }} ({{ weight|round(2) }})</span>
+                                                            {% endfor %}
+                                                        </p>
+                                                    </div>
+                                                    {% endfor %}
+                                                </div>
+                                                {% else %}
+                                                <p>未找到关键词示例</p>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                
+                <!-- 文本摘要结果 -->
+                {% if 'summary' in analysis_types %}
+                <div class="row mt-3">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5><i class="fas fa-file-alt"></i> 文本摘要结果</h5>
+                            </div>
+                            <div class="card-body">
+                                {% if summary_stats %}
+                                <div class="alert alert-info">
+                                    为{{ summary_stats.count }}条长文本生成摘要，平均减少{{ summary_stats.avg_reduction|round(1) }}%的文本长度
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-6 visualization-container">
+                                        <img src="{{ url_for('static', filename='visualizations/advanced/summary_length_reduction.png') }}" class="img-fluid" alt="摘要长度对比">
+                                        <p class="text-center mt-2">摘要长度对比</p>
+                                    </div>
+                                    
+                                    <div class="col-md-6">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h6>摘要示例</h6>
+                                            </div>
+                                            <div class="card-body">
+                                                {% if summary_samples %}
+                                                <div class="list-group">
+                                                    {% for original, summary in summary_samples %}
+                                                    <div class="list-group-item">
+                                                        <p><strong>原文（{{ original|length }}字）：</strong> {{ original }}</p>
+                                                        <p><strong>摘要（{{ summary|length }}字）：</strong> {{ summary }}</p>
+                                                    </div>
+                                                    {% endfor %}
+                                                </div>
+                                                {% else %}
+                                                <p>未找到摘要示例</p>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% else %}
+                                <div class="alert alert-warning">
+                                    未找到适合生成摘要的长文本，摘要功能适用于超过100字的文本。
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                
+                <!-- 主题建模结果 -->
+                {% if 'topic' in analysis_types %}
+                <div class="row mt-3">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5><i class="fas fa-th-large"></i> 主题建模结果</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    {% if topics %}
+                                    <div class="col-md-6 visualization-container">
+                                        <img src="{{ url_for('static', filename='visualizations/advanced/topic_keywords.png') }}" class="img-fluid" alt="主题关键词">
+                                        <p class="text-center mt-2">主题关键词</p>
+                                    </div>
+                                    
+                                    <div class="col-md-6 visualization-container">
+                                        <img src="{{ url_for('static', filename='visualizations/advanced/topic_distribution.png') }}" class="img-fluid" alt="文档主题分布">
+                                        <p class="text-center mt-2">文档主题分布</p>
+                                    </div>
+                                    
+                                    <div class="col-md-12 mt-3">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h6>主题示例文本</h6>
+                                            </div>
+                                            <div class="card-body">
+                                                <nav>
+                                                    <div class="nav nav-tabs" id="topic-tab" role="tablist">
+                                                        {% for topic_id, _ in topics %}
+                                                        <button class="nav-link {% if loop.first %}active{% endif %}" id="topic-{{ topic_id }}-tab" data-bs-toggle="tab" data-bs-target="#topic-{{ topic_id }}" type="button" role="tab">主题{{ topic_id }}</button>
+                                                        {% endfor %}
+                                                    </div>
+                                                </nav>
+                                                <div class="tab-content mt-2" id="topic-tabContent">
+                                                    {% for topic_id, _ in topics %}
+                                                    <div class="tab-pane fade {% if loop.first %}show active{% endif %}" id="topic-{{ topic_id }}" role="tabpanel">
+                                                        {% if topic_samples and topic_id in topic_samples %}
+                                                        <div class="list-group">
+                                                            {% for text, score in topic_samples[topic_id] %}
+                                                            <div class="list-group-item">
+                                                                <p><strong>文本（主题概率：{{ score|round(2) }}）：</strong> {{ text }}</p>
+                                                            </div>
+                                                            {% endfor %}
+                                                        </div>
+                                                        {% else %}
+                                                        <p>未找到主题{{ topic_id }}的示例文本</p>
+                                                        {% endif %}
+                                                    </div>
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% else %}
+                                    <div class="col-md-12">
+                                        <div class="alert alert-warning">
+                                            数据量不足，无法进行有效的主题建模。主题建模需要足够多的文本样本（建议至少20条）。
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                
+                <!-- 方面级情感分析结果 -->
+                {% if 'aspect' in analysis_types %}
+                <div class="row mt-3">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5><i class="fas fa-balance-scale"></i> 方面级情感分析结果</h5>
+                            </div>
+                            <div class="card-body">
+                                {% if aspect_summary %}
+                                <div class="row">
+                                    <div class="col-md-6 visualization-container">
+                                        <img src="{{ url_for('static', filename='visualizations/advanced/aspect_sentiment.png') }}" class="img-fluid" alt="方面级情感分析">
+                                        <p class="text-center mt-2">方面级情感分析</p>
+                                    </div>
+                                    
+                                    <div class="col-md-6 visualization-container">
+                                        <img src="{{ url_for('static', filename='visualizations/advanced/aspect_distribution.png') }}" class="img-fluid" alt="方面词分布">
+                                        <p class="text-center mt-2">方面词分布</p>
+                                    </div>
+                                    
+                                    <div class="col-md-12 mt-3">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h6>方面级情感示例</h6>
+                                            </div>
+                                            <div class="card-body">
+                                                <nav>
+                                                    <div class="nav nav-tabs" id="aspect-tab" role="tablist">
+                                                        {% for aspect_name in aspect_summary.keys() %}
+                                                            {% if loop.index <= 10 %}
+                                                                <button class="nav-link {% if loop.first %}active{% endif %}" id="aspect-{{ aspect_name }}-tab" data-bs-toggle="tab" data-bs-target="#aspect-{{ aspect_name }}" type="button" role="tab">{{ aspect_name }}</button>
+                                                            {% endif %}
+                                                        {% endfor %}
+                                                    </div>
+                                                </nav>
+                                                <div class="tab-content mt-2" id="aspect-tabContent">
+                                                    {% for aspect_name, stats in aspect_summary.items() %}
+                                                    {% if loop.index <= 10 %}
+                                                    <div class="tab-pane fade {% if loop.first %}show active{% endif %}" id="aspect-{{ aspect_name }}" role="tabpanel">
+                                                        <div class="row mb-3">
+                                                            <div class="col-md-4">
+                                                                <div class="card">
+                                                                    <div class="card-body text-center">
+                                                                        <h6>情感分布</h6>
+                                                                        <div class="progress" style="height: 30px;">
+                                                                            <div class="progress-bar bg-success" role="progressbar" style="width: {{ stats['正面比例']*100 }}%" aria-valuenow="{{ stats['正面比例']*100 }}" aria-valuemin="0" aria-valuemax="100">
+                                                                                {{ (stats['正面比例']*100)|round(1) }}%
+                                                                            </div>
+                                                                            <div class="progress-bar bg-warning" role="progressbar" style="width: {{ stats['中性比例']*100 }}%" aria-valuenow="{{ stats['中性比例']*100 }}" aria-valuemin="0" aria-valuemax="100">
+                                                                                {{ (stats['中性比例']*100)|round(1) }}%
+                                                                            </div>
+                                                                            <div class="progress-bar bg-danger" role="progressbar" style="width: {{ stats['负面比例']*100 }}%" aria-valuenow="{{ stats['负面比例']*100 }}" aria-valuemin="0" aria-valuemax="100">
+                                                                                {{ (stats['负面比例']*100)|round(1) }}%
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="mt-2 small">
+                                                                            <span class="text-success">正面: {{ stats['正面'] }}</span> | 
+                                                                            <span class="text-warning">中性: {{ stats['中性'] }}</span> | 
+                                                                            <span class="text-danger">负面: {{ stats['负面'] }}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            <div class="col-md-8">
+                                                                <div class="card">
+                                                                    <div class="card-body">
+                                                                        <h6>样例评论</h6>
+                                                                        {% if stats['样例'] %}
+                                                                        <div class="list-group">
+                                                                            {% for context, details in stats['样例'].items() %}
+                                                                            <div class="list-group-item list-group-item-{{ 'success' if details['极性'] == '正面' else ('warning' if details['极性'] == '中性' else 'danger') }}">
+                                                                                <p class="mb-1">{{ context }}</p>
+                                                                                <small>
+                                                                                    情感: {{ details['极性'] }} ({{ details['强度']|round(2) }}) | 
+                                                                                    情感词: 
+                                                                                    {% for word, score in details['情感词'] %}
+                                                                                    <span class="badge {{ 'bg-success' if score > 0 else 'bg-danger' }}">{{ word }}</span>
+                                                                                    {% endfor %}
+                                                                                </small>
+                                                                            </div>
+                                                                            {% endfor %}
+                                                                        </div>
+                                                                        {% else %}
+                                                                        <p>没有样例评论</p>
+                                                                        {% endif %}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    {% endif %}
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% else %}
+                                <div class="alert alert-warning">
+                                    未找到足够的方面词，无法进行方面级情感分析。方面级情感分析需要文本中提及具体的方面或属性。
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                
+                <div class="text-center mt-4">
+                    <a href="{{ url_for('advanced_analysis', file=file) }}" class="btn btn-outline-primary">
+                        <i class="fas fa-cogs"></i> 返回高级分析
+                    </a>
+                    <a href="{{ url_for('results', file=file) }}" class="btn btn-outline-success">
+                        <i class="fas fa-chart-bar"></i> 查看基础分析结果
+                    </a>
+                    <a href="{{ url_for('index') }}" class="btn btn-outline-secondary">
+                        <i class="fas fa-home"></i> 返回首页
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

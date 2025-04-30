@@ -1,0 +1,220 @@
+<!-- templates/analysis.html -->
+{% extends "base.html" %}
+
+{% block title %}情感分析 - 多源数据情感分析系统{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h2><i class="fas fa-chart-pie"></i> 情感分析</h2>
+            </div>
+            <div class="card-body">
+                {% if has_result %}
+                <div class="alert alert-success">
+                    <i class="fas fa-check-circle"></i> 数据已完成情感分析！
+                </div>
+                <div class="text-center mt-3 mb-3">
+                    <a href="{{ url_for('results', file=file) }}" class="btn btn-primary btn-lg">
+                        <i class="fas fa-chart-bar"></i> 查看分析结果
+                    </a>
+                </div>
+                {% else %}
+                <p class="lead">选择情感分析方法：</p>
+                
+                <form id="analysisForm">
+                    <input type="hidden" name="file" value="{{ file }}">
+                    
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name="method" id="methodScore" value="score" checked>
+                        <label class="form-check-label" for="methodScore">
+                            <strong>基于评分的情感分析</strong> - 使用评论中的评分来确定情感倾向
+                        </label>
+                        <div class="form-text">适用于数据中包含评分（score）列的情况，处理速度快</div>
+                    </div>
+                    
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name="method" id="methodBert" value="bert">
+                        <label class="form-check-label" for="methodBert">
+                            <strong>基于BERT的情感分析</strong> - 使用BERT模型进行深度学习情感分析
+                        </label>
+                        <div class="form-text">适用于所有情况，处理速度较慢，但准确率更高</div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" id="startAnalysisBtn">
+                        <i class="fas fa-play-circle"></i> 开始分析
+                    </button>
+                </form>
+                
+                <div class="loading" id="loadingIndicator" style="display: none;">
+                    <div class="text-center">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">正在分析...</span>
+                        </div>
+                        <p class="mt-2">正在进行情感分析，请耐心等待...</p>
+                        <p class="text-muted">使用BERT模型分析可能需要几分钟时间</p>
+                    </div>
+                </div>
+
+                <div class="progress mt-3" id="progressBar" style="display: none;">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="text-center mt-2" id="progressText" style="display: none;"></div>
+                
+                <div class="alert alert-danger mt-3" id="errorMessage" style="display: none;"></div>
+                <div class="alert alert-success mt-3" id="successMessage" style="display: none;">
+                    <i class="fas fa-check-circle"></i> 情感分析完成！
+                    <div class="text-center mt-2">
+                        <a href="{{ url_for('results', file=file) }}" class="btn btn-success">查看分析结果</a>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        
+        <div class="card mt-4">
+            <div class="card-header">
+                <h4>分析方法说明</h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5><i class="fas fa-star-half-alt"></i> 基于评分的情感分析</h5>
+                        <ul>
+                            <li>使用评论中的评分（1-5分）直接映射到情感类别</li>
+                            <li>1-2分视为负面情感，3分视为中性，4-5分视为正面情感</li>
+                            <li>优点：处理速度快，适合大规模数据</li>
+                            <li>缺点：依赖于评分数据，无法分析没有评分的评论</li>
+                            <li>适用场景：数据中包含可靠的评分信息</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <h5><i class="fas fa-brain"></i> 基于BERT的情感分析</h5>
+                        <ul>
+                            <li>使用预训练的BERT中文模型进行情感分类</li>
+                            <li>可以从文本内容本身分析情感倾向，不依赖评分</li>
+                            <li>优点：准确率高，可以捕捉复杂的情感表达</li>
+                            <li>缺点：计算量大，处理速度较慢</li>
+                            <li>适用场景：对准确率要求高，或数据中没有评分信息</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="alert alert-warning mt-3">
+                    <i class="fas fa-exclamation-triangle"></i> 注意：
+                    <ul>
+                        <li>首次使用BERT分析时需要下载模型，可能需要较长时间</li>
+                        <li>如果数据量很大，建议先使用基于评分的方法</li>
+                        <li>分析过程中请勿关闭页面或刷新页面</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        {% if not has_result %}
+        const analysisForm = document.getElementById('analysisForm');
+        const startAnalysisBtn = document.getElementById('startAnalysisBtn');
+        const loadingIndicator = document.getElementById('loadingIndicator');
+        const errorMessage = document.getElementById('errorMessage');
+        const successMessage = document.getElementById('successMessage');
+        const progressBar = document.getElementById('progressBar');
+        const progressBarInner = progressBar.querySelector('.progress-bar');
+        const progressText = document.getElementById('progressText');
+        
+        let progressInterval;
+        
+        function updateProgress() {
+            fetch('/progress?type=basic')
+                .then(response => response.json())
+                .then(data => {
+                    const { current, total, status, message } = data;
+                    
+                    if (total > 0) {
+                        const percent = Math.round((current / total) * 100);
+                        progressBarInner.style.width = `${percent}%`;
+                        progressBarInner.setAttribute('aria-valuenow', percent);
+                        progressText.textContent = message;
+                    }
+                    
+                    if (status === 'completed') {
+                        clearInterval(progressInterval);
+                        loadingIndicator.style.display = 'none';
+                        successMessage.style.display = 'block';
+                    } else if (status === 'error') {
+                        clearInterval(progressInterval);
+                        loadingIndicator.style.display = 'none';
+                        errorMessage.textContent = message || '情感分析失败，请重试';
+                        errorMessage.style.display = 'block';
+                        startAnalysisBtn.disabled = false;
+                    }
+                })
+                .catch(error => {
+                    console.error('获取进度信息失败:', error);
+                });
+        }
+        
+        analysisForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // 显示加载指示器和进度条
+            loadingIndicator.style.display = 'flex';
+            progressBar.style.display = 'block';
+            progressText.style.display = 'block';
+            startAnalysisBtn.disabled = true;
+            errorMessage.style.display = 'none';
+            successMessage.style.display = 'none';
+            
+            // 获取表单数据
+            const formData = new FormData(analysisForm);
+            
+            // 发送AJAX请求
+            fetch('/process', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                // 处理响应数据
+                if (data.status !== 'success') {
+                    // 显示错误消息
+                    errorMessage.textContent = data.message || '情感分析失败，请重试';
+                    errorMessage.style.display = 'block';
+                    startAnalysisBtn.disabled = false;
+                    
+                    // 隐藏加载指示器和进度条
+                    loadingIndicator.style.display = 'none';
+                    progressBar.style.display = 'none';
+                    progressText.style.display = 'none';
+                    
+                    clearInterval(progressInterval);
+                }
+            })
+            .catch(error => {
+                // 隐藏加载指示器和进度条
+                loadingIndicator.style.display = 'none';
+                progressBar.style.display = 'none';
+                progressText.style.display = 'none';
+                
+                // 显示错误消息
+                errorMessage.textContent = '请求失败：' + error.message;
+                errorMessage.style.display = 'block';
+                startAnalysisBtn.disabled = false;
+                
+                clearInterval(progressInterval);
+            });
+            
+            // 启动进度更新
+            progressInterval = setInterval(updateProgress, 1000);
+        });
+        {% endif %}
+    });
+</script>
+{% endblock %}

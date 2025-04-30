@@ -1,0 +1,118 @@
+<!-- templates/analyze_text.html -->
+{% extends "base.html" %}
+
+{% block title %}文本分析 - 多源数据情感分析系统{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h2><i class="fas fa-comment-dots"></i> 单条文本情感分析</h2>
+            </div>
+            <div class="card-body">
+                {% if error %}
+                <div class="alert alert-danger">{{ error }}</div>
+                {% endif %}
+                
+                <form method="post">
+                    <div class="mb-3">
+                        <label for="text" class="form-label">输入文本</label>
+                        <textarea class="form-control" id="text" name="text" rows="5" placeholder="请输入要分析的文本内容..." required>{{ text if text else '' }}</textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-search"></i> 分析情感
+                    </button>
+                </form>
+                
+                {% if sentiment %}
+                <div class="card mt-4">
+                    <div class="card-header">
+                        <h4>分析结果</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5>原始文本：</h5>
+                                <p class="border p-2 rounded">{{ text }}</p>
+                                
+                                <h5>清洗后文本：</h5>
+                                <p class="border p-2 rounded">{{ clean_text }}</p>
+                                
+                                <h5>分词结果：</h5>
+                                <p class="border p-2 rounded">
+                                    {% for word in words.split() %}
+                                    <span class="badge bg-light text-dark border m-1">{{ word }}</span>
+                                    {% endfor %}
+                                </p>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="text-center mb-4">
+                                    <h5>情感分析结果：</h5>
+                                    {% if sentiment == '正面' %}
+                                    <div class="display-1 text-success"><i class="fas fa-smile"></i></div>
+                                    <h3 class="text-success">{{ sentiment }}</h3>
+                                    {% elif sentiment == '负面' %}
+                                    <div class="display-1 text-danger"><i class="fas fa-frown"></i></div>
+                                    <h3 class="text-danger">{{ sentiment }}</h3>
+                                    {% else %}
+                                    <div class="display-1 text-warning"><i class="fas fa-meh"></i></div>
+                                    <h3 class="text-warning">{{ sentiment }}</h3>
+                                    {% endif %}
+                                    <p>情感概率：{{ probability }}</p>
+                                </div>
+                                
+                                <div class="progress" style="height: 30px;">
+                                    {% if sentiment == '正面' %}
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: {{ probability|float * 100 }}%" 
+                                         aria-valuenow="{{ probability|float * 100 }}" aria-valuemin="0" aria-valuemax="100">
+                                        {{ probability }}
+                                    </div>
+                                    {% elif sentiment == '负面' %}
+                                    <div class="progress-bar bg-danger" role="progressbar" style="width: {{ probability|float * 100 }}%" 
+                                         aria-valuenow="{{ probability|float * 100 }}" aria-valuemin="0" aria-valuemax="100">
+                                        {{ probability }}
+                                    </div>
+                                    {% else %}
+                                    <div class="progress-bar bg-warning" role="progressbar" style="width: {{ probability|float * 100 }}%" 
+                                         aria-valuenow="{{ probability|float * 100 }}" aria-valuemin="0" aria-valuemax="100">
+                                        {{ probability }}
+                                    </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        
+        <div class="card mt-4">
+            <div class="card-header">
+                <h4>使用说明</h4>
+            </div>
+            <div class="card-body">
+                <p>本功能用于对单条文本进行情感分析，支持中文文本。</p>
+                <ul>
+                    <li>文本清洗：去除HTML标签、特殊字符、过滤数字等</li>
+                    <li>中文分词：使用结巴分词进行中文分词处理</li>
+                    <li>去停用词：过滤常见停用词，保留有意义的词语</li>
+                    <li>情感分析：使用BERT模型对文本进行情感分类</li>
+                </ul>
+                
+                <div class="alert alert-info">
+                    <i class="fas fa-lightbulb"></i> 提示：
+                    <ul>
+                        <li>情感分类包括：正面、中性、负面三类</li>
+                        <li>情感概率表示模型对该分类的置信度</li>
+                        <li>建议输入较完整的句子以获得更准确的分析结果</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

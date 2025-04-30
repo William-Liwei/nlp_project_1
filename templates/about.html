@@ -1,0 +1,272 @@
+<!-- templates/about.html -->
+{% extends "base.html" %}
+
+{% block title %}关于系统 - 多源数据情感分析系统{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h2><i class="fas fa-info-circle"></i> 关于系统</h2>
+            </div>
+            <div class="card-body">
+                <h4>系统概述</h4>
+                <p class="lead">本系统是一个基于BERT的多源数据情感分析系统，集成了先进的NLP技术，用于分析来自不同平台的评论数据，挖掘用户情感和观点。</p>
+                
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <h5><i class="fas fa-cogs"></i> 基础功能</h5>
+                        <ul>
+                            <li><strong>多源数据爬取</strong>：支持豆瓣电影、京东商品、网易云音乐等平台评论数据爬取</li>
+                            <li><strong>数据预处理</strong>：文本清洗、中文分词、去停用词等预处理功能</li>
+                            <li><strong>BERT情感分析</strong>：使用先进的BERT模型进行情感分类</li>
+                            <li><strong>结果可视化</strong>：情感分布、平台对比、词云图、情感趋势等多种可视化展示</li>
+                            <li><strong>单文本分析</strong>：提供单条文本的情感分析功能</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <h5><i class="fas fa-brain"></i> 高级NLP功能</h5>
+                        <ul>
+                            <li><strong>命名实体识别</strong>：识别文本中的人名、地名、组织机构名、产品名等实体</li>
+                            <li><strong>依存句法分析</strong>：分析句子中词语之间的语法依存关系，深入理解句子结构</li>
+                            <li><strong>关键词抽取</strong>：使用TextRank/TF-IDF算法抽取文本关键词和短语</li>
+                            <li><strong>文本摘要生成</strong>：自动生成文本摘要，提取文本中的重要信息</li>
+                            <li><strong>主题建模</strong>：使用LDA/NMF等统计模型发现文本集合中的隐含主题</li>
+                            <li><strong>方面级情感分析</strong>：细粒度情感分析，识别文本中特定方面的情感倾向</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h4 class="mt-4">系统架构</h4>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="text-center">
+                                    <h5>多源数据情感分析系统架构图</h5>
+                                    <div class="mt-3">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <div class="card bg-light">
+                                                    <div class="card-body text-center">
+                                                        <h6>数据采集层</h6>
+                                                        <hr>
+                                                        <p>多平台爬虫</p>
+                                                        <p>文件导入</p>
+                                                        <p>文本输入</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="card bg-light">
+                                                    <div class="card-body text-center">
+                                                        <h6>数据处理层</h6>
+                                                        <hr>
+                                                        <p>文本清洗</p>
+                                                        <p>中文分词</p>
+                                                        <p>去停用词</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="card bg-light">
+                                                    <div class="card-body text-center">
+                                                        <h6>分析模型层</h6>
+                                                        <hr>
+                                                        <p>BERT情感分类</p>
+                                                        <p>命名实体识别</p>
+                                                        <p>依存句法分析</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="card bg-light">
+                                                    <div class="card-body text-center">
+                                                        <h6>可视化展示层</h6>
+                                                        <hr>
+                                                        <p>情感分布</p>
+                                                        <p>实体关系</p>
+                                                        <p>主题模型</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mt-2">
+                                            <div class="card bg-light">
+                                                <div class="card-body text-center">
+                                                    <h6>Web应用层</h6>
+                                                    <hr>
+                                                    <p>Flask Web框架 + Bootstrap UI</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h4 class="mt-4">高级NLP技术应用</h4>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>NLP技术</th>
+                                <th>应用模块</th>
+                                <th>功能描述</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>中文分词</td>
+                                <td>数据预处理模块</td>
+                                <td>使用结巴分词对中文文本进行词语切分，提取有意义的词语单元</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>停用词过滤</td>
+                                <td>数据预处理模块</td>
+                                <td>过滤常见无意义词语，如"的"、"了"等，提高分析效率和准确率</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>BERT预训练模型</td>
+                                <td>情感分析模块</td>
+                                <td>利用预训练的中文BERT模型捕捉文本语义特征，进行情感分类</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>情感分析</td>
+                                <td>情感分析模块</td>
+                                <td>对文本进行情感倾向性分析，区分正面、中性、负面评论</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>命名实体识别</td>
+                                <td>高级分析模块</td>
+                                <td>识别文本中的实体信息，包括人名、地名、组织机构名等，支持多种模型</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>依存句法分析</td>
+                                <td>高级分析模块</td>
+                                <td>分析句子中词语之间的依存关系，揭示句子的语法结构</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>TextRank算法</td>
+                                <td>关键词抽取模块</td>
+                                <td>基于图算法的无监督学习方法，提取文本关键词和关键短语</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>TF-IDF算法</td>
+                                <td>关键词抽取模块</td>
+                                <td>基于词频和逆文档频率的经典关键词提取方法</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>文本摘要</td>
+                                <td>高级分析模块</td>
+                                <td>选择文本中最重要的句子，生成摘要，降低阅读负担</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>主题建模(LDA/NMF)</td>
+                                <td>高级分析模块</td>
+                                <td>无监督学习算法，发现文本集合中的主题分布和主题-词语分布</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>方面级情感分析</td>
+                                <td>高级分析模块</td>
+                                <td>针对文本中特定方面（如产品属性、电影特点）进行细粒度情感分析</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h4 class="mt-4">系统优势</h4>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-chart-line"></i> 多维度分析</h5>
+                                <p class="card-text">集成多种NLP技术，从词法、句法、语义、情感等多个维度深入分析文本数据，提供全面的分析视角。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-database"></i> 多源数据支持</h5>
+                                <p class="card-text">支持多个平台的数据采集和分析，可以对比不同平台用户的情感差异，发现跨平台规律。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-tachometer-alt"></i> 高精度分析</h5>
+                                <p class="card-text">采用BERT等先进预训练模型，结合多种NLP技术，提供高精度的情感分析和语义理解能力。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-chart-pie"></i> 丰富可视化</h5>
+                                <p class="card-text">提供多种数据可视化方式，包括情感分布、词云图、实体关系图、主题分布等，直观展示分析结果。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-user-cog"></i> 用户友好</h5>
+                                <p class="card-text">简洁直观的Web界面，步骤引导式操作，降低用户使用门槛，让非技术人员也能轻松进行数据分析。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-expand-arrows-alt"></i> 高扩展性</h5>
+                                <p class="card-text">模块化设计，易于集成新的数据源、分析算法和可视化方式，具有良好的可扩展性和可维护性。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h4 class="mt-4">开发信息</h4>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><strong>课程：</strong>自然语言语义处理概论</p>
+                                <p><strong>开发者：</strong>黎玮</p>
+                                <p><strong>学号：</strong>23122693</p>
+                                <p><strong>指导教师：</strong>魏晓</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><strong>开发时间：</strong>2025年5月</p>
+                                <p><strong>系统版本：</strong>2.0</p>
+                                <p><strong>学院：</strong>计算机工程与科学学院</p>
+                                <p><strong>班级：</strong>23级直招计科2班</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

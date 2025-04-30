@@ -1,0 +1,124 @@
+<!-- templates/upload.html -->
+{% extends "base.html" %}
+
+{% block title %}上传数据 - 多源数据情感分析系统{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h2><i class="fas fa-file-upload"></i> 上传评论数据</h2>
+            </div>
+            <div class="card-body">
+                {% if error %}
+                <div class="alert alert-danger">{{ error }}</div>
+                {% endif %}
+                
+                <form method="post" enctype="multipart/form-data" id="uploadForm">
+                    <div class="mb-3">
+                        <label for="file" class="form-label">选择数据文件</label>
+                        <input class="form-control" type="file" id="file" name="file" accept=".csv,.xlsx,.xls" required>
+                        <div class="form-text">支持的文件格式：CSV, Excel（.xlsx, .xls）</div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" id="submitBtn">
+                        <i class="fas fa-upload"></i> 上传文件
+                    </button>
+                </form>
+                
+                <div class="loading" id="loadingIndicator" style="display: none;">
+                    <div class="text-center">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">正在上传...</span>
+                        </div>
+                        <p class="mt-2">正在上传和处理文件，请耐心等待...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card mt-4">
+            <div class="card-header">
+                <h4>文件格式说明</h4>
+            </div>
+            <div class="card-body">
+                <p>上传的文件必须包含以下列：</p>
+                <ul>
+                    <li><strong>content</strong>：评论内容（必须）</li>
+                    <li><strong>label</strong>：实际情感标签，1=正面，0=负面（可选，用于计算分类准确率）</li>
+                    <li><strong>score</strong>：评分，1-5分（可选，有助于训练模型）</li>
+                    <li><strong>platform</strong>：数据来源平台（可选）</li>
+                    <li><strong>time</strong>：评论时间（可选）</li>
+                    <li><strong>user</strong>：用户名（可选）</li>
+                </ul>
+                
+                <div class="alert alert-info">
+                    <i class="fas fa-info-circle"></i> 提示：
+                    <ul>
+                        <li>如果文件中包含评分（score）列，系统可以使用它来训练情感分析模型</li>
+                        <li>如果文件中包含平台（platform）列，系统可以生成不同平台的情感对比</li>
+                        <li>如果文件中包含时间（time）列，系统可以生成情感趋势分析</li>
+                        <li>文件大小限制为16MB</li>
+                    </ul>
+                </div>
+                
+                <h5>文件示例：</h5>
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>content</th>
+                                <th>label</th>
+                                <th>score</th>
+                                <th>platform</th>
+                                <th>time</th>
+                                <th>user</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>这个产品很好用，值得推荐！</td>
+                                <td>1</td>
+                                <td>5</td>
+                                <td>京东商品</td>
+                                <td>2023-01-01</td>
+                                <td>user123</td>
+                            </tr>
+                            <tr>
+                                <td>一般般，没有传说中那么好。</td>
+                                <td>0</td>
+                                <td>3</td>
+                                <td>京东商品</td>
+                                <td>2023-01-02</td>
+                                <td>user456</td>
+                            </tr>
+                            <tr>
+                                <td>太差了，完全不值这个价格！</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>京东商品</td>
+                                <td>2023-01-03</td>
+                                <td>user789</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const uploadForm = document.getElementById('uploadForm');
+        const loadingIndicator = document.getElementById('loadingIndicator');
+        
+        uploadForm.addEventListener('submit', function() {
+            loadingIndicator.style.display = 'flex';
+        });
+    });
+</script>
+{% endblock %}

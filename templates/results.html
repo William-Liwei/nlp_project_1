@@ -1,0 +1,308 @@
+<!-- templates/results.html -->
+{% extends "base.html" %}
+
+{% block title %}分析结果 - 多源数据情感分析系统{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h2><i class="fas fa-chart-bar"></i> 情感分析结果</h2>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-success">
+                    <i class="fas fa-check-circle"></i> 已成功分析 <strong>{{ total_count }}</strong> 条评论数据
+                </div>
+
+                {% if 'accuracy' in sentiment_counts %}
+                <div class="alert alert-info">
+                    <i class="fas fa-chart-line"></i> 情感分类准确率: <strong>{{ (sentiment_counts.accuracy * 100)|round(2) }}%</strong>
+                    <small class="d-block mt-1">（基于上传数据中的真实标签计算）</small>
+                </div>
+                {% endif %}
+                
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>情感分布统计</h5>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="sentimentChart"></canvas>
+                                <div class="table-responsive mt-3">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>情感类别</th>
+                                                <th>数量</th>
+                                                <th>百分比</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for sentiment, count in sentiment_counts.items() %}
+                                            <tr>
+                                                <td>{{ sentiment }}</td>
+                                                <td>{{ count }}</td>
+                                                <td>{{ (count / total_count * 100) | round(2) }}%</td>
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        {% if platform_counts %}
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>平台数据统计</h5>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="platformChart"></canvas>
+                                <div class="table-responsive mt-3">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>平台</th>
+                                                <th>数量</th>
+                                                <th>百分比</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for platform, count in platform_counts.items() %}
+                                            <tr>
+                                                <td>{{ platform }}</td>
+                                                <td>{{ count }}</td>
+                                                <td>{{ (count / total_count * 100) | round(2) }}%</td>
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        {% else %}
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>数据统计</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="alert alert-info">
+                                    <i class="fas fa-info-circle"></i> 数据中没有平台信息，无法生成平台统计。
+                                </div>
+                                <div class="mt-3">
+                                    <h6>总数据量：{{ total_count }}条</h6>
+                                    <div class="progress mt-2">
+                                        <div class="progress-bar bg-primary" role="progressbar" style="width: 100%">{{ total_count }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+                
+                <h4 class="mt-4">可视化结果</h4>
+                <div class="row">
+                    {% for viz in visualizations %}
+                    <div class="col-md-6 visualization-container">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="{{ url_for('static', filename='visualizations/' + viz) }}" class="img-fluid" alt="可视化图表">
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                
+                <h4 class="mt-4">典型评论示例</h4>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-header bg-success text-white">
+                                <h5><i class="fas fa-thumbs-up"></i> 正面评论示例</h5>
+                            </div>
+                            <div class="card-body">
+                                {% if positive_examples %}
+                                    {% for example in positive_examples %}
+                                    <div class="example-card">
+                                        <p>"{{ example.content }}"</p>
+                                        <div class="text-muted">
+                                            <small>
+                                                平台：{{ example.platform }} | 
+                                                评分：{{ example.score }} | 
+                                                标签：{{ example.label }} | 
+                                                情感概率：{{ (example.probability*100)|round(2) }}%
+                                            </small>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    {% endfor %}
+                                {% else %}
+                                <div class="alert alert-info">没有找到正面评论示例</div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-header bg-warning text-dark">
+                                <h5><i class="fas fa-meh"></i> 中性评论示例</h5>
+                            </div>
+                            <div class="card-body">
+                                {% if neutral_examples %}
+                                    {% for example in neutral_examples %}
+                                    <div class="example-card">
+                                        <p>"{{ example.content }}"</p>
+                                        <div class="text-muted">
+                                            <small>
+                                                平台：{{ example.platform }} | 
+                                                评分：{{ example.score }} | 
+                                                标签：{{ example.label }} | 
+                                                情感概率：{{ (example.probability*100)|round(2) }}%
+                                            </small>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    {% endfor %}
+                                {% else %}
+                                <div class="alert alert-info">没有找到中性评论示例</div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-header bg-danger text-white">
+                                <h5><i class="fas fa-thumbs-down"></i> 负面评论示例</h5>
+                            </div>
+                            <div class="card-body">
+                                {% if negative_examples %}
+                                    {% for example in negative_examples %}
+                                    <div class="example-card">
+                                        <p>"{{ example.content }}"</p>
+                                        <div class="text-muted">
+                                            <small>
+                                                平台：{{ example.platform }} | 
+                                                评分：{{ example.score }} | 
+                                                标签：{{ example.label }} | 
+                                                情感概率：{{ (example.probability*100)|round(2) }}%
+                                            </small>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    {% endfor %}
+                                {% else %}
+                                <div class="alert alert-info">没有找到负面评论示例</div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-4">
+                    <a href="{{ url_for('advanced_analysis', file=file) }}" class="btn btn-outline-success">
+                        <i class="fas fa-brain"></i> 高级分析
+                    </a>
+                    <a href="{{ url_for('api_data', file=file) }}" class="btn btn-outline-primary" target="_blank">
+                        <i class="fas fa-code"></i> 查看API数据
+                    </a>
+                    <a href="{{ url_for('index') }}" class="btn btn-outline-secondary">
+                        <i class="fas fa-home"></i> 返回首页
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 情感分布图表
+        const sentimentCtx = document.getElementById('sentimentChart').getContext('2d');
+        const sentimentChart = new Chart(sentimentCtx, {
+            type: 'pie',
+            data: {
+                labels: [
+                    {% for sentiment in sentiment_counts.keys() %}
+                    '{{ sentiment }}',
+                    {% endfor %}
+                ],
+                datasets: [{
+                    data: [
+                        {% for count in sentiment_counts.values() %}
+                        {{ count }},
+                        {% endfor %}
+                    ],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.7)',
+                        'rgba(54, 162, 235, 0.7)',
+                        'rgba(255, 206, 86, 0.7)',
+                        'rgba(75, 192, 192, 0.7)',
+                        'rgba(153, 102, 255, 0.7)'
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    },
+                    title: {
+                        display: true,
+                        text: '情感分布'
+                    }
+                }
+            }
+        });
+        
+        // 平台分布图表（如果有平台数据）
+        {% if platform_counts %}
+        const platformCtx = document.getElementById('platformChart').getContext('2d');
+        const platformChart = new Chart(platformCtx, {
+            type: 'bar',
+            data: {
+                labels: [
+                    {% for platform in platform_counts.keys() %}
+                    '{{ platform }}',
+                    {% endfor %}
+                ],
+                datasets: [{
+                    label: '评论数量',
+                    data: [
+                        {% for count in platform_counts.values() %}
+                        {{ count }},
+                        {% endfor %}
+                    ],
+                    backgroundColor: 'rgba(54, 162, 235, 0.7)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: '平台数据分布'
+                    }
+                }
+            }
+        });
+        {% endif %}
+    });
+</script>
+{% endblock %}
